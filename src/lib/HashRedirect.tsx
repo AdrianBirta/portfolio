@@ -1,5 +1,6 @@
 'use client';
 
+import HashNavigationHandle from '@/lib/HashNavigationHandle';
 import { useEffect } from 'react';
 
 export default function HashRedirect() {
@@ -18,6 +19,8 @@ export default function HashRedirect() {
 
       if (!validHashes.includes(currentHash)) {
         window.location.replace('#about');
+
+        HashNavigationHandle("about");
       }
     };
 

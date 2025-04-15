@@ -1,42 +1,62 @@
-"use client"
+"use client";
 
-import { useEffect } from "react";
+import HashNavigationHandle from "@/lib/HashNavigationHandle";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 export default function NavLink({
   href,
-  section
+  section,
+  Icon,
+  currentHash,
+  setCurrentHash,
 }: {
-  href: string,
-  section: string
+  href: string;
+  section: string;
+  Icon: React.ReactNode;
+  currentHash: string;
+  setCurrentHash: (val: string) => void;
 }) {
-
-  const handleNavigation = (sectionId: string) => {
-    const currentActive = document.querySelector('.section.active');
-    if (currentActive) {
-      currentActive.classList.remove('active');
-    }
-
-    const nextSection = document.getElementById(sectionId);
-    if (nextSection) {
-      nextSection.classList.add('active');
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    const initialSection = document.getElementById('about');
+    const current = document.documentElement.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+    setTheme(current);
 
-    if (initialSection)
-      initialSection.classList.add("active");
-  }, [])
+    const observer = new MutationObserver(() => {
+      const updatedTheme = document.documentElement.classList.contains("light-theme")
+        ? "light"
+        : "dark";
+      setTheme(updatedTheme);
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <a
       href={`#${href}`}
-      className="nav-link"
-      onClick={() => handleNavigation(href)}
+      className={clsx(
+        "flex items-center gap-2 px-10 py-4 transition-colors duration-300 link",
+        currentHash === href
+          ? theme === "light"
+            ? "bg-blue-100 text-highlight border-r-4 border-highlight"
+            : "bg-gray-700 text-highlight border-r-4 border-highlight"
+          : theme === "light"
+            ? "text-gray-800 hover:text-highlight"
+            : "text-white hover:text-highlight"
+      )}
+      onClick={(e) => {
+        e.preventDefault();
+        HashNavigationHandle(href, setCurrentHash);
+      }}
     >
+      {Icon}
       {section}
     </a>
-  )
+  );
 }

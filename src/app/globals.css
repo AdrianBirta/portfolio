@@ -1,42 +1,276 @@
 @import "tailwindcss";
 
-body {
-  padding: 10px;
-  height: 100vh;
+/* ===== THEME VARIABLES ===== */
+
+/* Default: Dark Theme */
+:root {
+  --bg-color: #1a1b2f;
+  --sidebar-bg: #1a1b2f;
+  --section-bg: #1f1f2e;
+  --section-border: rgba(255, 255, 255, 0.1);
+  --sidebar-profile-bg: #a784ffcd;
+  --scrollbar-thumb: #a78bfa;
+  --text-color: #ffffff;
+  --bg-image: url('/images/bg.jpg');
+  --bg-shadow-cursor: rgba(169, 85, 247, 0.2);
+  --highlight-color: #a78bfa;
 }
 
-header {
+/* Light Theme */
+.light-theme {
+  --bg-color: #f4f7fb;
+  --sidebar-bg: #fffffff0;
+  --section-bg: #ffffffe9;
+  --section-border: rgba(21, 18, 217, 0.1);
+  --sidebar-profile-bg: #c4d9ff;
+  --scrollbar-thumb: #60a5fa;
+  --text-color: #1f2937;
+  --bg-image: url('/images/bg-light.jpg');
+  --bg-shadow-cursor: rgba(25, 71, 207, 0.2);
+  --highlight-color: #60a5fa;
+}
+
+/* ===== BASE GLOBAL STYLES ===== */
+
+.text-highlight {
+  color: var(--highlight-color);
+}
+
+.border-highlight {
+  border-color: var(--highlight-color);
+}
+
+.hover\:text-highlight:hover {
+  color: var(--highlight-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Portfolio Wrapper (main layout container) */
+.portfolio-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 0.5s ease;
+}
+
+/* Sidebar */
+.sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%
-}
-
-/* Base styles for sections */
-.section {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 290px;
   height: 100%;
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--section-border);
+}
+
+/* Sidebar Header */
+.sidebar .sidebar-header {
+  border-bottom: 1px solid var(--section-border);
+}
+
+.sidebar .sidebar-header .profilePic {
+  width: 130px;
+  border-radius: 10%;
+  background-color: var(--sidebar-profile-bg);
+  box-shadow: 0px 0px 2px 5px var(--section-border);
+}
+
+/* Sidebar Scrollable Container */
+.sidebar .sidebar-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  direction: rtl;
+}
+
+.sidebar-scroll-container * {
+  direction: ltr;
+}
+
+/* Scrollbar Style */
+.sidebar-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Sidebar Nav List Item Borders */
+.sidebar .sidebar-scroll-container .sidebar-nav .sidebar-nav-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Sidebar Bottom Buttons */
+.sidebar .sidebar-buttons {
+  border-top: 1px solid var(--section-border);
+}
+
+.sidebar .sidebar-buttons> :first-child {
+  border-right: 1px solid var(--section-border);
+}
+
+/* Hash Sections Container */
+.hashSectionsContainer {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sections (pages) */
+.hashSection {
+  position: absolute;
+  left: 80px;
+  right: 100px;
+  top: 0;
+  bottom: 0;
   opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: var(--section-bg);
+  z-index: 2;
+  border: 1px solid var(--section-border);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
-/* Active section styles */
-.section.active {
-  opacity: 1;
-  transform: translateX(0);
+/* Section States */
+.hashSection.active {
+  animation: flyIn 1s ease forwards;
+  z-index: 2;
 }
 
-/* Previous section styles */
-.section.previous {
-  opacity: 0;
-  transform: scale(0.8);
+.hashSection.previous {
+  animation: zoomOut 1s ease forwards;
+  z-index: 1;
 }
 
+/* Nav Link Style */
 .nav-link {
   text-transform: capitalize;
+}
 
+.link {}
+
+/* ===== ANIMATIONS ===== */
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-10%) scale(0.9);
+  }
+}
+
+/* === Cursor Shadow Effect === */
+.cursor-shadow {
+  pointer-events: none;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-shadow-cursor);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 80ms linear, left 80ms linear, transform 0.15s ease;
+  z-index: 9999;
+}
+
+.cursor-shadow.scale-up {
+  transform: translate(-50%, -50%) scale(1.6);
+}
+
+.cursor-shadow.hidden {
+  display: none;
+}
+
+.status-dot-wrapper {
+  position: absolute;
+  right: 10px;
+  bottom: 25px;
+}
+
+.status-dot {
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: rgba(34, 197, 94, 0.792);
+  /* Tailwind green-500 at 40% */
+  animation: pulseWave 1.5s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulseWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border: 1px solid var(--section-border);
+  z-index: 20;
+}
+
+.status-dot-wrapper:hover .tooltip,
+.tooltip-wrapper:hover .tooltip {
+  opacity: 1;
 }
