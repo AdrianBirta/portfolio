@@ -13,7 +13,8 @@ export default function HashNavigationHandle(sectionId: string, setHash?: (hash:
   if (nextSection) {
     nextSection.classList.add('active');
     nextSection.classList.remove('previous');
-    nextSection.scrollIntoView({ behavior: 'smooth' });
+    nextSection.scrollIntoView({ behavior: 'smooth', block: "start" });
+    nextSection.scrollTop = 0;
   }
 
   window.location.hash = sectionId;

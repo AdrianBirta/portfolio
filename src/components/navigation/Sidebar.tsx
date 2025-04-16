@@ -4,13 +4,17 @@ import NavLink from "@/components/navigation/NavLink";
 import {
   User03, GraduationHat02, Mail03, PuzzlePiece02, Briefcase02, Mail01,
   Moon01, Sun, ArrowCircleBrokenUpLeft, ArrowNarrowUpLeft,
+  ChevronRight,
+  ChevronLeft,
 } from "@untitled-ui/icons-react";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 export default function Sidebar() {
   const [currentHash, setCurrentHash] = useState<string>("");
   const [theme, setTheme] = useState<string>("dark");
   const [showCursorShadow, setShowCursorShadow] = useState<boolean>(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     // Detect system preference or stored theme
@@ -91,46 +95,57 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="sidebar rounded-xl overflow-hidden">
+      <div className={clsx(
+        "sidebar rounded-xl overflow-hidden transition-all duration-300",
+        isCollapsed ? "w-[110px] h-[110]" : "w-[290px]"
+      )}>
+
         <div className="sidebar-header p-6 text-center">
           <div className="relative inline-block">
             <img
               src="/images/profilePicture.png"
               alt="Profile Picture"
-              className="m-auto mb-4 profilePic"
+              className={clsx(
+                "m-auto profilePic transition-all duration-300",
+                isCollapsed ? "w-14 h-16" : "w-[130px]"
+              )}
             />
             <div className="status-dot-wrapper">
               <span className="w-4 h-4 bg-green-500 border-2 border-white rounded-full status-dot" />
-              <div className="tooltip">Available!</div>
+              {showCursorShadow && (
+                <div className="tooltip">Available!</div>
+              )}
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <img src="/images/iconM24.png" alt="Monitor code" className="mr-2" />
-            <p className="text-2xl">Adrian <span className="text-highlight">Birta</span></p>
-          </div>
-          <p className="text-md font-bold text-gray-400">Senior Frontend Developer</p>
+          <span className={isCollapsed ? "hidden" : ""}>
+            <div className="flex items-center justify-center mt-2">
+              <img src="/images/iconM24.png" alt="Monitor code" className="mr-2" />
+              <p className="text-2xl">Adrian <span className="text-highlight">Birta</span></p>
+            </div>
+            <p className="text-md font-bold text-gray-400">Senior Frontend Developer</p>
+          </span>
         </div>
 
         <div className="sidebar-scroll-container">
           <nav className="sidebar-nav">
             <ul className="sidebar-nav-list">
               <li>
-                <NavLink href="about" section="About me" Icon={<User03 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="about" section="About me" Icon={<User03 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="education" section="Education" Icon={<GraduationHat02 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="education" section="Education" Icon={<GraduationHat02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="skills" section="Skills" Icon={<PuzzlePiece02 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="skills" section="Skills" Icon={<PuzzlePiece02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="experience" section="Experience" Icon={<Mail03 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="experience" section="Experience" Icon={<Mail03 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="portfolio" section="Portfolio" Icon={<Briefcase02 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="portfolio" section="Portfolio" Icon={<Briefcase02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="contact" section="Contact" Icon={<Mail01 className="w-5 h-5" />} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="contact" section="Contact" Icon={<Mail01 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
             </ul>
           </nav>
@@ -138,31 +153,48 @@ export default function Sidebar() {
 
         <div className="sidebar-buttons flex">
           {/* Theme toggle button with tooltip */}
-          <div className="tooltip-wrapper w-1/2 flex justify-center items-center">
+          <div className={clsx(
+            "tooltip-wrapper flex justify-center items-center",
+            isCollapsed ? "w-full" : "w-1/2"
+          )}>
             <button
               onClick={toggleTheme}
-              className="hover:text-highlight transition-colors duration-300 cursor-pointer p-3 link"
+              className="hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
             >
               {theme === "light" ? <Moon01 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
-            <div className="tooltip">
-              {theme === "light" ? "Dark Mode" : "Light Mode"}
-            </div>
+            {showCursorShadow && (
+              <div className="tooltip">
+                {theme === "light" ? "Dark Mode" : "Light Mode"}
+              </div>
+            )}
           </div>
 
           {/* Cursor toggle button with tooltip */}
-          <div className="tooltip-wrapper w-1/2 flex justify-center items-center">
+          <div className={clsx(
+            "tooltip-wrapper w-1/2 flex justify-center items-center",
+            isCollapsed && "hidden"
+          )}>
             <button
               onClick={() => setShowCursorShadow(prev => !prev)}
-              className="hover:text-highlight transition-colors duration-300 cursor-pointer p-3 link"
+              className="hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
             >
               {showCursorShadow ? <ArrowNarrowUpLeft className="w-5 h-5" /> : <ArrowCircleBrokenUpLeft className="w-5 h-5" />}
             </button>
-            <div className="tooltip">
-              {showCursorShadow ? "Magic cursor: off" : "Magic cursor: on"}
-            </div>
+            {showCursorShadow && (
+              <div className="tooltip">
+                Magic cursor: on
+              </div>
+            )}
           </div>
         </div>
+
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="p-2 absolute -top-1 -right-2.5 z-10 hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
+        >
+          {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+        </button>
       </div>
       {/* Floating cursor shadow */}
       <div id="cursor-shadow" className={`cursor-shadow ${showCursorShadow ? "" : "hidden"}`}></div>

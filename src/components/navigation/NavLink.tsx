@@ -10,12 +10,14 @@ export default function NavLink({
   Icon,
   currentHash,
   setCurrentHash,
+  isCollapsed
 }: {
   href: string;
   section: string;
   Icon: React.ReactNode;
   currentHash: string;
   setCurrentHash: (val: string) => void;
+  isCollapsed: boolean;
 }) {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
@@ -56,7 +58,7 @@ export default function NavLink({
       }}
     >
       {Icon}
-      {section}
+      {!isCollapsed && section}
     </a>
   );
 }

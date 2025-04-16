@@ -1,4 +1,4 @@
-import About from "@/components/sections/About";
+import About from "@/components/sections/About/About";
 import Contact from "@/components/sections/Contact";
 import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
@@ -8,16 +8,17 @@ import Sidebar from "@/components/navigation/Sidebar";
 
 export default function Home() {
   return (
-    // <div className="portfolio-wrapper bg-[url('/images/bg-light.jpg')] bg-cover bg-center">
-    <div className="portfolio-wrapper bg-[url('/images/bg.jpg')] bg-cover bg-center">
+    <div className="portfolio-wrapper">
       <Sidebar />
-      <div className="hashSectionsContainer">
-        <About />
-        <Contact />
-        <Education />
-        <Experience />
-        <Portfolio />
-        <Skills />
+      <div className="sectionsContainerWrapper">
+        <div className="hashSectionsContainer px-2">
+          <About />
+          <Contact />
+          <Education />
+          <Experience />
+          <Portfolio />
+          <Skills />
+        </div>
       </div>
     </div>
   );
