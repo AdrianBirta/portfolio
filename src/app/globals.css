@@ -20,7 +20,6 @@
   --line-width: 4px;
   --line-color: var(--highlight-bg-color);
   --badge-highlight-bg-color: #181824ea;
-
 }
 
 /* Light Theme */
@@ -59,6 +58,10 @@
 
 .bg-highlight {
   background-color: var(--highlight-color);
+}
+
+.bg-light-highlight {
+  background-color: var(--highlight-bg-color);
 }
 
 .el-highlight {
@@ -217,30 +220,7 @@ body {
 
 .link {}
 
-/* ===== ANIMATIONS ===== */
-@keyframes flyIn {
-  0% {
-    opacity: 0;
-    transform: translateX(50px) scale(0.8);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes zoomOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0%) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-10%) scale(0.6);
-  }
-}
 
 /* === Cursor Shadow Effect === */
 .cursor-shadow {
@@ -362,4 +342,53 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   border-color: var(--line-color);
   border-width: calc(var(--line-width) * 1.5);
   font-size: calc(var(--circle-size) / 2.5);
+}
+
+.hashSection.active section .skill .skill-details .skill-pipe .skill-level {
+  width: 0;
+  height: 100%;
+  background-color: var(--scrollbar-thumb);
+  animation: fillIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.hashSection section .skill .skill-details .skill-pipe .skill-level {
+  width: 100%;
+  height: 100%;
+  background-color: var(--scrollbar-thumb);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-10%) scale(0.6);
+  }
+}
+
+@keyframes fillIn {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
 }

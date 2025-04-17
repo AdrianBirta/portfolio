@@ -1,12 +1,14 @@
 export default function SubtitleSmall({
   icon,
-  text
+  text,
+  className
 }: {
   icon?: React.ReactNode;
   text: string;
+  className?: string;
 }) {
   return (
-    <div className="text-md text-gray-400 p-2 flex items-center">
+    <div className={`text-md text-gray-400 p-2 flex items-center ${className}`}>
       {icon && icon} {text}
     </div>
   )
