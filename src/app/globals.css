@@ -16,6 +16,11 @@
   --highlight-color: #a78bfa;
   --highlight-text-color: #ffffff;
   --highlight-bg-color: #364153;
+  --circle-size: 70px;
+  --line-width: 4px;
+  --line-color: var(--highlight-bg-color);
+  --badge-highlight-bg-color: #181824ea;
+
 }
 
 /* Light Theme */
@@ -32,6 +37,10 @@
   --highlight-color: #60a5fa;
   --highlight-text-color: #1e2939;
   --highlight-bg-color: #dbeafe;
+  --circle-size: 70px;
+  --line-width: 4px;
+  --line-color: var(--highlight-bg-color);
+  --badge-highlight-bg-color: #f6f6f6;
 }
 
 /* ===== BASE GLOBAL STYLES ===== */
@@ -55,6 +64,10 @@
 .el-highlight {
   color: var(--highlight-text-color);
   background-color: var(--highlight-bg-color);
+}
+
+.badge-bg-highlight {
+  background-color: var(--badge-highlight-bg-color);
 }
 
 .triangle {
@@ -310,4 +323,43 @@ body {
 .status-dot-wrapper:hover .tooltip,
 .tooltip-wrapper:hover .tooltip {
   opacity: 1;
+}
+
+ul.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+ul.timeline-list:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: calc(var(--circle-size) / 2 - var(--line-width) / 2);
+  width: var(--line-width);
+  background-color: var(--line-color);
+}
+
+ul.timeline-list .timeline-item .left-side-section {
+  z-index: 2;
+}
+
+ul.timeline-list .timeline-item .circle-avatar {
+  background-color: var(--highlight-bg-color);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-color: var(--line-color);
+  border-width: calc(var(--line-width) * 1.5);
+  font-size: calc(var(--circle-size) / 2.5);
+}
+
+ul.timeline-list .timeline-item .circle-avatar.start {
+  background-color: var(--scrollbar-thumb);
+  width: var(--circle-size / 2);
+  height: var(--circle-size / 2);
+  border-color: var(--line-color);
+  border-width: calc(var(--line-width) * 1.5);
+  font-size: calc(var(--circle-size) / 2.5);
 }

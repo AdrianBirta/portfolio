@@ -29,8 +29,7 @@ export default function Sidebar() {
     updateHash();
     window.addEventListener("hashchange", updateHash);
 
-    const initialSection = document.getElementById('about');
-    if (initialSection) initialSection.classList.add("active");
+    console.log("update hash")
 
     return () => window.removeEventListener("hashchange", updateHash);
   }, []);

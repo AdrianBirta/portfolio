@@ -15,12 +15,14 @@ export default function HashRedirect() {
     ]; // Add all valid hashes here
 
     const handleHashChange = () => {
+
       const currentHash = window.location.hash;
 
       if (!validHashes.includes(currentHash)) {
         window.location.replace('#about');
-
         HashNavigationHandle("about");
+      } else {
+        HashNavigationHandle(currentHash.replace("#", ""));
       }
     };
 

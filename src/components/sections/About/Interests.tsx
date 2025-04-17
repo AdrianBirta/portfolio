@@ -1,10 +1,12 @@
+import SectionBlock from "@/components/SectionBlock";
 import CardInterest from "@/components/sections/About/CardInterest";
+import TitleSection from "@/components/TitleSection";
 import { AlertHexagon, BookOpen01, Code02, CodeCircle03, CpuChip01, Edit04, VideoRecorder } from "@untitled-ui/icons-react";
 
 export default function Interests() {
   return (
-    <section className="professional-interests pt-16">
-      <div className="title border-l-4 border-highlight text-3xl pl-4 mb-8">Professional <span className="text-highlight">Interests</span></div>
+    <SectionBlock>
+      <TitleSection leftBorder={true} title="Professional" titleHigh="Interests" />
 
       <div className="interests flex flex-wrap gap-6 justify-center">
         <CardInterest
@@ -38,6 +40,6 @@ export default function Interests() {
           description={"Love building scalable applications and solving complex problems."}
         />
       </div>
-    </section>
+    </SectionBlock>
   )
 }

@@ -52,10 +52,7 @@ export default function NavLink({
             ? "text-gray-800 hover:text-highlight"
             : "text-white hover:text-highlight"
       )}
-      onClick={(e) => {
-        e.preventDefault();
-        HashNavigationHandle(href, setCurrentHash);
-      }}
+      onClick={() => HashNavigationHandle(href, setCurrentHash)}
     >
       {Icon}
       {!isCollapsed && section}
