@@ -3,14 +3,10 @@ export type RichTextItem = {
   highlights?: string[];
 }
 
-export default function ListBlock({
-  intro1,
-  focus,
-  items
+export default function TextBlock({
+  item
 }: {
-  intro1?: string;
-  focus?: string;
-  items: RichTextItem[];
+  item: RichTextItem;
 }) {
   function highlightWords(text: string, highlights?: string[]) {
     if (!highlights || highlights.length === 0) return text;
@@ -29,25 +25,9 @@ export default function ListBlock({
 
   return (
     <div className="main-education-section mt-4">
-      {intro1 && (
-        <div className="intro mb-2">
-          {intro1}
-        </div>
-      )}
-      {focus && (
-        <div className="intro mb-2 font-bold">
-          {focus}
-        </div>
-      )}
-      <ul className="list-disc pl-8">
-        {
-          items.map((item: RichTextItem, i) => (
-            <li key={i} className="m-2">
-              {highlightWords(item.text, item.highlights)}
-            </li>
-          ))
-        }
-      </ul>
+      <div>
+        {highlightWords(item.text, item.highlights)}
+      </div>
     </div>
   )
 }

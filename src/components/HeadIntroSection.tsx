@@ -1,3 +1,4 @@
+import Icon from "@/components/icons/Icon";
 import TitleSection from "@/components/TitleSection";
 import { Building06, Cube04, Mail02 } from "@untitled-ui/icons-react";
 
@@ -17,7 +18,7 @@ export default function HeadIntroSection({
   return (
     <section className="head-intro flex flex-col items-center pt-8">
       <span className="flex items-center text-gray-600 mb-2">
-        <Cube04 className="w-6 h-6 mr-2" />
+        <Icon name="docs" className="w-8 h-8 mr-2" />
         <p className="text-2xl">{intro}</p>
       </span>
       <TitleSection

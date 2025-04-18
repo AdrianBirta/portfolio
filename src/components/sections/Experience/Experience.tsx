@@ -1,5 +1,6 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
+import TimelineList from "@/components/sections/Experience/TimelineList";
 
 export default function Experience() {
   return (
@@ -12,6 +13,8 @@ export default function Experience() {
         titleHigh="Work"
         highFirst={true}
       />
+
+      <TimelineList />
 
     </section>
   )

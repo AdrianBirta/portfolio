@@ -1,5 +1,7 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
+import SectionBlock from "@/components/SectionBlock";
+import ProjectCards from "@/components/sections/Portfolio/ProjectCards";
 
 export default function Portfolio() {
   return (
@@ -11,6 +13,10 @@ export default function Portfolio() {
         title="My"
         titleHigh="Past Projects"
       />
+
+      <SectionBlock>
+        <ProjectCards />
+      </SectionBlock>
 
     </section>
   )

@@ -1,5 +1,8 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
+import SectionBlock from "@/components/SectionBlock";
+import FormContact from "@/components/sections/Contact/FormContact";
+import TitleSection from "@/components/TitleSection";
 
 export default function Contact() {
   return (
@@ -12,6 +15,13 @@ export default function Contact() {
         titleHigh="Contact"
         highFirst={true}
       />
+
+      <SectionBlock>
+        <TitleSection leftBorder title="Send me a" titleHigh="message" />
+
+        <FormContact />
+
+      </SectionBlock>
 
     </section>
   )

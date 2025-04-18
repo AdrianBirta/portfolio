@@ -28,6 +28,7 @@ import TypescriptIcon from "@/components/icons/skills/TypescriptIcon"
 import VuejsIcon from "@/components/icons/skills/VuedotjsIcon"
 import VuetifyIcon from "@/components/icons/skills/VuetifyIcon"
 import CypressIcon from "@/components/icons/skills/CypressIcon"
+import LinkedinIcon from "@/components/icons/skills/LinkedinIcon"
 
 export const iconMap = {
   amazon: AmazonIcon,
@@ -43,6 +44,7 @@ export const iconMap = {
   git: GitIcon,
   gitlab: GitlabIcon,
   graphql: GraphqlIcon,
+  linkedin: LinkedinIcon,
   html: HtmlIcon,
   javascript: JavascriptIcon,
   jest: JestIcon,

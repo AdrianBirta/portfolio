@@ -2,11 +2,12 @@
 
 import NavLink from "@/components/navigation/NavLink";
 import {
-  User03, GraduationHat02, Mail03, Briefcase02, Mail01,
+  User03, GraduationHat02, Briefcase02, Mail01,
   Moon01, Sun, ArrowCircleBrokenUpLeft, ArrowNarrowUpLeft,
   ChevronRight,
   ChevronLeft,
   Tool02,
+  FolderCheck,
 } from "@untitled-ui/icons-react";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -137,10 +138,10 @@ export default function Sidebar() {
                 <NavLink href="skills" section="Skills" Icon={<Tool02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="experience" section="Experience" Icon={<Mail03 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="experience" section="Experience" Icon={<Briefcase02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
-                <NavLink href="portfolio" section="Portfolio" Icon={<Briefcase02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+                <NavLink href="portfolio" section="Portfolio" Icon={<FolderCheck className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
               </li>
               <li>
                 <NavLink href="contact" section="Contact" Icon={<Mail01 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />

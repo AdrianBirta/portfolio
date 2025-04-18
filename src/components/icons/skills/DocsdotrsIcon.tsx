@@ -5,7 +5,7 @@ type IconProps = {
 }
 
 
-export default function DocsIcon({ size = 24, color = "#000000", className }: IconProps) {
+export default function DocsIcon({ size = 24, color = "#4a5565", className }: IconProps) {
   return (
     <svg
       role="img"

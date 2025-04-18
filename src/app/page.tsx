@@ -1,8 +1,8 @@
 import About from "@/components/sections/About/About";
-import Contact from "@/components/sections/Contact";
+import Contact from "@/components/sections/Contact/Contact";
 import Education from "@/components/sections/Education/Education";
-import Experience from "@/components/sections/Experience";
-import Portfolio from "@/components/sections/Portfolio";
+import Experience from "@/components/sections/Experience/Experience";
+import Portfolio from "@/components/sections/Portfolio/Portfolio";
 import Skills from "@/components/sections/Skills/Skills";
 import Sidebar from "@/components/navigation/Sidebar";
 
