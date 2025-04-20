@@ -22,7 +22,7 @@ export default function ListBlock({
       highlights.some(h => h.toLowerCase() === part.toLowerCase()) ? (
         <span key={idx} className="font-semibold text-highlight">{part}</span>
       ) : (
-        <span key={idx}>{part}</span>
+        part
       )
     );
   }

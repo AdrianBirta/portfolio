@@ -15,7 +15,8 @@ export const MessageFormSchema = z.object({
 
   email: z
     .string()
-    .email({ message: "Please enter a valid email." })
+    .min(1, { message: "E-mail field is required." })
+    .email({ message: "Please enter a valid e-mail." })
     .trim(),
 
   message: z
