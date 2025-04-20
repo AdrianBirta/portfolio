@@ -4,7 +4,7 @@ import { useActionState } from "react"
 import emailjs from "@emailjs/browser"
 import { MessageFormSchema } from "@/lib/rules"
 
-import { Edit05, Feather, Loading01, Mail02, Mail03, Mail04, Mail05 } from "@untitled-ui/icons-react"
+import { Check, Edit05, Feather, Loading01, Mail02, Mail03, Mail04, Mail05 } from "@untitled-ui/icons-react"
 
 type FieldErrors = Partial<Record<"name" | "email" | "subject" | "message", string[]>>
 type GlobalError = {
@@ -108,6 +108,20 @@ export default function FormContact() {
     message: string;
   } => {
     return "errors" in state && !("global" in state.errors)
+  }
+
+  if ("success" in state && state.success) {
+    return (
+      <div className="bg-light-highlight flex flex-col gap-6 rounded-2xl items-center justify-center w-full p-10">
+        <Check className="w-34 h-34 bg-highlight text-bg-highlight text-md p-8 rounded-full" />
+        <div className="text text-center">
+          <h2 className="text-2xl mb-2">Yay!</h2>
+          <p className="text-gray-400">
+            Your message has been sent successfully! I will respond as soon as possible.
+          </p>
+        </div>
+      </div>
+    )
   }
 
   return (
