@@ -29,6 +29,7 @@ import VuejsIcon from "@/components/icons/skills/VuedotjsIcon"
 import VuetifyIcon from "@/components/icons/skills/VuetifyIcon"
 import CypressIcon from "@/components/icons/skills/CypressIcon"
 import LinkedinIcon from "@/components/icons/skills/LinkedinIcon"
+import WhatsappIcon from "@/components/icons/skills/WhatsappIcon"
 
 export const iconMap = {
   amazon: AmazonIcon,
@@ -62,4 +63,5 @@ export const iconMap = {
   typescript: TypescriptIcon,
   vuejs: VuejsIcon,
   vuetify: VuetifyIcon,
+  whatsapp: WhatsappIcon,
 }

@@ -1,5 +1,6 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
+import Icon from "@/components/icons/Icon";
 import SectionBlock from "@/components/SectionBlock";
 import CardInterest from "@/components/sections/About/CardInterest";
 import FormContact from "@/components/sections/Contact/FormContact";
@@ -31,9 +32,27 @@ export default function Contact() {
         <div className="interests flex flex-wrap gap-6 justify-center">
           <CardInterest
             icon={<Phone className="w-10 h-10" />}
-            name={"Phone / WhatsApp"}
-            description={"+40771322909"}
+            name={"Phone"}
+            description={"+40 771 322 909"}
             descriptionLink={{ phone: true }}
+          />
+          <CardInterest
+            icon={<Icon name="whatsapp" className="w-10 h-10 p-1" />}
+            name={"WhatsApp"}
+            description={"+40 771 322 909"}
+            descriptionLink={{ whatsapp: true }}
+          />
+          <CardInterest
+            icon={<Phone className="w-10 h-10" />}
+            name={"E-mail"}
+            description={"adrian.birta.dev@gmail.com"}
+            descriptionLink={{ email: true }}
+          />
+          <CardInterest
+            icon={<Phone className="w-10 h-10" />}
+            name={"LinkedIn"}
+            description={"@adrianbirta"}
+            descriptionLink={{ linkedin: true }}
           />
 
         </div>
