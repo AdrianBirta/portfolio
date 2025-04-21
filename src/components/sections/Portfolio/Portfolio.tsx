@@ -5,7 +5,7 @@ import ProjectCards from "@/components/sections/Portfolio/ProjectCards";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="hashSection rounded-xl p-6">
+    <section id="portfolio" className="hashSection rounded-xl p-6 pb-10">
       <CubeTopLeftHalf />
 
       <HeadIntroSection

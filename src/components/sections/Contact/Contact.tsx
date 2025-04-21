@@ -9,7 +9,7 @@ import { Phone } from "@untitled-ui/icons-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="hashSection rounded-xl p-6">
+    <section id="contact" className="hashSection rounded-xl p-6 pb-10">
       <CubeTopLeftHalf />
 
       <HeadIntroSection

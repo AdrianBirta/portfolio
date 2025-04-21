@@ -389,6 +389,7 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   margin-bottom: 16px;
   background-color: var(--highlight-bg-color);
   border: 1px solid var(--highlight-bg-color);
+  position: relative;
 }
 
 .form-field:focus-within {
@@ -397,12 +398,21 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   color: #fff;
 }
 
+.form-field-error {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 1rem;
+  color: red;
+}
+
 .form-field-input {
   background-color: var(--badge-highlight-bg-color);
   border: 1px solid var(--highlight-bg-color);
   width: 100%;
   padding: 0.5rem;
   outline: none;
+  overflow: hidden;
 }
 
 .form-field-input::placeholder {

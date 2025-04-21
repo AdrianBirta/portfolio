@@ -8,7 +8,7 @@ import { GraduationHat02 } from "@untitled-ui/icons-react";
 
 export default function Education() {
   return (
-    <section id="education" className="hashSection rounded-xl p-6">
+    <section id="education" className="hashSection rounded-xl p-6 pb-10">
       <CubeTopLeftHalf />
 
       <HeadIntroSection

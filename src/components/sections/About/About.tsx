@@ -8,7 +8,7 @@ import TitleSection from "@/components/TitleSection";
 
 export default function About() {
   return (
-    <section id="about" className="hashSection rounded-xl p-6">
+    <section id="about" className="hashSection rounded-xl p-6 pb-10">
       <CubeTopLeftHalf />
 
       <HeadIntroSection
