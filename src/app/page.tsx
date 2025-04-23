@@ -14,8 +14,8 @@ export default function Home() {
         <div className="hashSectionsContainer sm:px-2">
           <About className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
           <Contact className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
-          <Education className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
-          <Experience className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Education className="hashSection sm:rounded-xl rounded-sm sm:p-6 sm:pl-8 pr-6 pb-10 pl-12" />
+          <Experience className="hashSection sm:rounded-xl rounded-sm sm:p-6 sm:pl-8 pr-6 pb-10 pl-12" />
           <Portfolio className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
           <Skills className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
         </div>

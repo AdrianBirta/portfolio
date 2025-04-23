@@ -1,18 +1,20 @@
 "use client"
 
 import NavLink from "@/components/navigation/NavLink";
-import { User03 } from "@untitled-ui/icons-react";
+import { Briefcase02, Clock, FolderCheck, GraduationHat02, Image05, Mail01, Tool02, User03 } from "@untitled-ui/icons-react";
 import { useEffect, useState } from "react";
+
+export type ChapterKey = keyof typeof sectionsTop;
 
 const chaptersBottom: {
   name: string;
   link: ChapterKey | null;
-  href: string[];
+  href?: string;
 }[] = [
-    { name: "Home", link: null, href: ["about"] },
-    { name: "History", link: "history", href: ["education", "experience"] },
-    { name: "Showcase", link: "showcase", href: ["skills", "portfolio"] },
-    { name: "Contact", link: null, href: ["contact"] },
+    { name: "Home", link: null, href: "about" },
+    { name: "History", link: "history" },
+    { name: "Showcase", link: "showcase" },
+    { name: "Contact", link: null, href: "contact" },
   ];
 
 const sectionsTop = {
@@ -25,8 +27,6 @@ const sectionsTop = {
     { name: "Portfolio", href: "portfolio" }
   ]
 };
-
-export type ChapterKey = keyof typeof sectionsTop;
 
 export default function SidebarMenu({
   className,
@@ -62,22 +62,44 @@ export default function SidebarMenu({
   }, []);
 
   useEffect(() => {
-    const getCurrentHashChapterLink = chaptersBottom.find(chapter => chapter.href.includes(currentHash))?.link
+    const getHref = (val: { name: string; href: string }) => val.href === currentHash;
 
-    setSelectedChapter(() => getCurrentHashChapterLink)
+    const getCurrentHashChapterLink = sectionsTop.history.find(getHref)
+      ? "history"
+      : sectionsTop.showcase.find(getHref)
+        ? "showcase"
+        : null;
+
     getCurrentHashChapterLink === "history"
       ? setHistorySelection(currentHash)
       : getCurrentHashChapterLink === "showcase"
         ? setShowcaseSelection(currentHash)
-        : null
+        : null;
+
+    setSelectedChapter(() => getCurrentHashChapterLink);
   }, [currentHash])
 
-  const onClickMenuLink = (val: ChapterKey | null | undefined) => {
-    setSelectedChapter(val);
-  }
-
-  const onChangeTopMenu = (href: string | null | undefined) => {
-    console.log("onChangeTopMenu - href:", href)
+  const getIconNavLink = (name: string) => {
+    switch (name) {
+      case "Home":
+        return <User03 className="w-5 h-5 mb-0.5" />
+      case "Education":
+        return <GraduationHat02 className="w-5 h-5 mr-2" />
+      case "Skills":
+        return <Tool02 className="w-5 h-5 mr-2" />
+      case "Experience":
+        return <Briefcase02 className="w-5 h-5 mr-2" />
+      case "Portfolio":
+        return <FolderCheck className="w-5 h-5 mr-2" />
+      case "Contact":
+        return <Mail01 className="w-5 h-5 mb-0.5" />
+      case "History":
+        return <Clock className="w-5 h-5 mb-0.5" />
+      case "Showcase":
+        return <Image05 className="w-5 h-5 mb-0.5" />
+      default:
+        return null
+    }
   }
 
   return (
@@ -87,18 +109,16 @@ export default function SidebarMenu({
         <nav className="top-menu h-12">
           <ul className="footer-menu-list w-full h-full flex items-center">
             {sectionsTop[selectedChapter].map(section => {
-              console.log("section:", section)
               return (
                 <NavLink
                   key={section.name}
                   href={section.href}
                   section={section.name}
-                  Icon={<User03 className="w-5 h-5" />}
+                  Icon={getIconNavLink(section.name)}
                   currentHash={currentHash}
                   setCurrentHash={setCurrentHash}
                   menuLink={true}
                   menuLinkTop={true}
-                  onChangeTopMenu={onChangeTopMenu}
                 />
               )
             })}
@@ -114,18 +134,18 @@ export default function SidebarMenu({
                 key={chapter.name}
                 href={
                   chapter.link === "history"
-                    ? [historySelection]
+                    ? historySelection
                     : chapter.link === "showcase"
-                      ? [showcaseSelection]
+                      ? showcaseSelection
                       : chapter.href
                 }
                 section={chapter.name}
-                Icon={<User03 className="w-5 h-5" />}
+                Icon={getIconNavLink(chapter.name)}
                 currentHash={currentHash}
                 setCurrentHash={setCurrentHash}
                 menuLink={true}
                 chapterLink={chapter.link}
-                handleClick={onClickMenuLink}
+                handleClick={setSelectedChapter}
               />
             ))
           }

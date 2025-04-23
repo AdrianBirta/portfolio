@@ -361,6 +361,58 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   font-size: calc(var(--circle-size) / 2.5);
 }
 
+@media screen and (max-width: 1024px) {
+  :root {
+    --circle-size: 50px;
+  }
+
+  ul.timeline-list .timeline-item .left-side-section {
+    width: 0px;
+  }
+
+  ul.timeline-list:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: calc(var(--circle-size) / 4);
+    width: var(--line-width);
+    background-color: var(--line-color);
+  }
+
+  ul.timeline-list .timeline-item .circle-avatar {
+    position: relative;
+    bottom: calc(var(--circle-size) / 2);
+    right: calc(var(--circle-size) / 4);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --circle-size: 50px;
+  }
+
+  ul.timeline-list .timeline-item .left-side-section {
+    width: 0px;
+  }
+
+  ul.timeline-list:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--line-width);
+    background-color: var(--line-color);
+  }
+
+  ul.timeline-list .timeline-item .circle-avatar {
+    position: relative;
+    bottom: calc(var(--circle-size) / 2);
+    right: calc(var(--circle-size) / 2);
+  }
+}
+
 .hashSection.active section .skill .skill-details .skill-pipe .skill-level {
   width: 0;
   height: 100%;

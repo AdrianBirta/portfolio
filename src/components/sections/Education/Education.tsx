@@ -1,10 +1,6 @@
-import BadgePill from "@/components/BadgePill";
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
-import HeadBlock from "@/components/HeadBlock";
 import HeadIntroSection from "@/components/HeadIntroSection";
-import ListBlock from "@/components/ListBlock";
 import TimelineList from "@/components/sections/Education/TimelineList";
-import { GraduationHat02 } from "@untitled-ui/icons-react";
 
 export default function Education({ className }: { className: string }) {
   return (
@@ -13,6 +9,7 @@ export default function Education({ className }: { className: string }) {
 
       <HeadIntroSection
         intro="This is my"
+        titleHighMd="Education"
         title="Background"
         titleHigh="Educational"
         highFirst={true}

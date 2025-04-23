@@ -13,19 +13,19 @@ export default function TimelineItem({
   skills: string[]
 }) {
   return (
-    <li className="timeline-item flex justify-between w-full pb-8">
-      <div className="left-side-section pr-4">
+    <li className="timeline-item flex justify-between w-full lg:pb-8 pb-20">
+      <div className="left-side-section sm:pr-4 pr-0 ">
         <div className="circle-avatar flex items-center justify-center rounded-full">
-          <GraduationHat02 className="w-10 h-10" />
+          <GraduationHat02 className="sm:w-10 sm:h-10 sm:w-5 sm:h-5" />
         </div>
       </div>
       <div className="timeline-content w-full el-highlight rounded-2xl p-4">
-
         <HeadBlock
           titleHigh={headBlock.titleHigh}
           title={headBlock.title}
           location={headBlock.location}
           date={headBlock.date}
+          timeline={true}
         />
 
         <ListBlock

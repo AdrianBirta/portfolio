@@ -62,6 +62,7 @@ export default function Skills({ className }: { className: string }) {
         intro="Explore"
         title="My"
         titleHigh="Skill Set"
+        titleHighMd="Skills"
       />
 
       <SectionBlock>

@@ -317,7 +317,7 @@ export default function TimelineList() {
           industry="E-Commerce"
         />
 
-        <li className="timeline-item flex justify-between w-full">
+        <li className="timeline-item flex justify-between w-full lg:h-full h-1 md:mb-4 mb-15">
           <div className="left-side-section pr-4">
             <div className="circle-avatar start flex items-center justify-center rounded-full"></div>
           </div>

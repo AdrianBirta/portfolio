@@ -12,6 +12,7 @@ export default function Portfolio({ className }: { className: string }) {
         intro="Take a look at"
         title="My"
         titleHigh="Past Projects"
+        titleHighMd="Portfolio"
       />
 
       <SectionBlock>

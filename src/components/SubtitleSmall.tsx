@@ -8,7 +8,7 @@ export default function SubtitleSmall({
   className?: string;
 }) {
   return (
-    <div className={`text-md text-gray-400 p-2 flex items-center ${className}`}>
+    <div className={`text-md text-gray-400 p-2 flex flex-wrap items-center ${className}`}>
       {icon && icon} {text}
     </div>
   )

@@ -16,6 +16,7 @@ export default function Contact({ className }: { className: string }) {
         intro="Don't hesitate to"
         title="Me"
         titleHigh="Contact"
+        titleHighMd="Contact"
         highFirst={true}
       />
 

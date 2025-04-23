@@ -98,7 +98,7 @@ export default function Sidebar() {
     <section>
       <div className={clsx(
         "sidebar sm:rounded-xl rounded-sm overflow-hidden transition-all duration-300 sm:pb-0 pb-0",
-        isCollapsed ? "w-[110px] h-[110]" : "lg:w-[390px] md:w-[110px] sm:w-[110px] sm:h-full sm:mb-0 mb-1 w-full "
+        isCollapsed ? "w-[110px] h-[110]" : "lg:w-[390px] md:w-[110px] sm:w-[110px] sm:h-full sm:mb-0 mb-1 w-full"
       )}>
 
         <button

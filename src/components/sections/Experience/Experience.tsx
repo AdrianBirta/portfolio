@@ -11,6 +11,7 @@ export default function Experience({ className }: { className: string }) {
         intro="Summary of my"
         title="Experience"
         titleHigh="Work"
+        titleHighMd="Experience"
         highFirst={true}
       />
 
