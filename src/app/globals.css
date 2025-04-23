@@ -5,7 +5,7 @@
 /* Default: Dark Theme */
 :root {
   --bg-color: #1a1b2f;
-  --sidebar-bg: #1a1b2ff0;
+  --sidebar-bg: #1a1b2ffa;
   --section-bg: #1f1f2eea;
   --section-border: rgba(255, 255, 255, 0.1);
   --sidebar-profile-bg: #a784ffcd;
@@ -52,16 +52,28 @@
   color: var(--highlight-color);
 }
 
+.bg-sidebar {
+  background-color: var(--sidebar-bg);
+}
+
 .text-bg-highlight {
   color: var(--highlight-bg-color);
 }
 
-.border-highlight {
+.border-color-highlight {
   border-color: var(--highlight-color);
+}
+
+.border-color-bg-highlight {
+  border-color: var(--highlight-bg-color);
 }
 
 .border-1-highlight {
   border: 1px solid var(--highlight-color);
+}
+
+.border-1-highlight-bg-color {
+  border: 1px solid var(--highlight-bg-color);
 }
 
 .hover\:text-highlight:hover {
@@ -74,10 +86,6 @@
 
 .bg-light-highlight {
   background-color: var(--highlight-bg-color);
-}
-
-.border-filed-highlight {
-  border: 1px solid var(--highlight-bg-color);
 }
 
 .el-highlight {
@@ -101,16 +109,22 @@
   transform: translateX(-50%);
 }
 
+html,
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Portfolio Wrapper (main layout container) */
 .portfolio-wrapper {
   display: flex;
-  padding: 20px;
+
   height: 100%;
   background-image: var(--bg-image);
   background-size: cover;
@@ -124,7 +138,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
   background-color: var(--sidebar-bg);
   border: 1px solid var(--section-border);
   transition: none;
@@ -187,11 +200,6 @@ body {
   border-right: 1px solid var(--section-border);
 }
 
-.sectionsContainerWrapper {
-  flex: 1;
-  padding: 0 20px 0 40px;
-}
-
 /* Hash Sections Container */
 .hashSectionsContainer {
   position: relative;
@@ -199,7 +207,6 @@ body {
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 20px 0 40px;
 }
 
 /* Sections (pages) */

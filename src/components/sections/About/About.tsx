@@ -1,20 +1,19 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
-import SectionBlock from "@/components/SectionBlock";
 import AboutMe from "@/components/sections/About/AboutMe";
 import Interests from "@/components/sections/About/Interests";
 import Testimonails from "@/components/sections/About/Testimonials";
-import TitleSection from "@/components/TitleSection";
 
-export default function About() {
+export default function About({ className }: { className: string }) {
   return (
-    <section id="about" className="hashSection rounded-xl p-6 pb-10">
+    <section id="about" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection
         intro="Hello..."
-        title="I'm"
+        titleHighMd="Welcome!"
         titleHigh="Adrian Birta!"
+        title="I'm"
         address={true}
       />
 

@@ -8,16 +8,16 @@ import Sidebar from "@/components/navigation/Sidebar";
 
 export default function Home() {
   return (
-    <div className="portfolio-wrapper">
+    <div className="portfolio-wrapper sm:flex-row flex-col sm:p-5 p-1">
       <Sidebar />
-      <div className="sectionsContainerWrapper">
-        <div className="hashSectionsContainer px-2">
-          <About />
-          <Contact />
-          <Education />
-          <Experience />
-          <Portfolio />
-          <Skills />
+      <div className="sectionsContainerWrapper w-full h-full sm:pl-10 sm:pr-5">
+        <div className="hashSectionsContainer sm:px-2">
+          <About className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Contact className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Education className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Experience className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Portfolio className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
+          <Skills className="hashSection sm:rounded-xl rounded-sm p-6 pb-10" />
         </div>
       </div>
     </div>

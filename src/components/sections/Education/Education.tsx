@@ -6,9 +6,9 @@ import ListBlock from "@/components/ListBlock";
 import TimelineList from "@/components/sections/Education/TimelineList";
 import { GraduationHat02 } from "@untitled-ui/icons-react";
 
-export default function Education() {
+export default function Education({ className }: { className: string }) {
   return (
-    <section id="education" className="hashSection rounded-xl p-6 pb-10">
+    <section id="education" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

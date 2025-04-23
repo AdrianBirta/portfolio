@@ -2,9 +2,9 @@ import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
 import TimelineList from "@/components/sections/Experience/TimelineList";
 
-export default function Experience() {
+export default function Experience({ className }: { className: string }) {
   return (
-    <section id="experience" className="hashSection rounded-xl p-6 pb-10">
+    <section id="experience" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

@@ -1,6 +1,8 @@
 "use client"
 
 import NavLink from "@/components/navigation/NavLink";
+import SidebarMenu from "@/components/navigation/SidebarMenu";
+import SidebarNav from "@/components/navigation/SidebarNav";
 import {
   User03, GraduationHat02, Briefcase02, Mail01,
   Moon01, Sun, ArrowCircleBrokenUpLeft, ArrowNarrowUpLeft,
@@ -93,11 +95,18 @@ export default function Sidebar() {
   };
 
   return (
-    <>
+    <section>
       <div className={clsx(
-        "sidebar rounded-xl overflow-hidden transition-all duration-300",
-        isCollapsed ? "w-[110px] h-[110]" : "w-[290px]"
+        "sidebar sm:rounded-xl rounded-sm overflow-hidden transition-all duration-300 sm:pb-0 pb-0",
+        isCollapsed ? "w-[110px] h-[110]" : "lg:w-[390px] md:w-[110px] sm:w-[110px] sm:h-full sm:mb-0 mb-1 w-full "
       )}>
+
+        <button
+          onClick={toggleTheme}
+          className="sm:hidden block hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link absolute right-0 top-0"
+        >
+          {theme === "light" ? <Moon01 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+        </button>
 
         <div className="sidebar-header p-6 text-center">
           <div className="relative inline-block">
@@ -116,7 +125,7 @@ export default function Sidebar() {
               )}
             </div>
           </div>
-          <span className={isCollapsed ? "hidden" : ""}>
+          <span className={isCollapsed ? "hidden" : "lg:block md:hidden sm:hidden "}>
             <div className="flex items-center justify-center mt-2">
               <img src="/images/iconM24.png" alt="Monitor code" className="mr-2" />
               <p className="text-2xl">Adrian <span className="text-highlight">Birta</span></p>
@@ -125,36 +134,24 @@ export default function Sidebar() {
           </span>
         </div>
 
-        <div className="sidebar-scroll-container">
-          <nav className="sidebar-nav">
-            <ul className="sidebar-nav-list">
-              <li>
-                <NavLink href="about" section="About me" Icon={<User03 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-              <li>
-                <NavLink href="education" section="Education" Icon={<GraduationHat02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-              <li>
-                <NavLink href="skills" section="Skills" Icon={<Tool02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-              <li>
-                <NavLink href="experience" section="Experience" Icon={<Briefcase02 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-              <li>
-                <NavLink href="portfolio" section="Portfolio" Icon={<FolderCheck className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-              <li>
-                <NavLink href="contact" section="Contact" Icon={<Mail01 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <SidebarNav
+          isCollapsed={isCollapsed}
+          currentHash={currentHash}
+          setCurrentHash={setCurrentHash}
+          className="sidebar-scroll-container hidden sm:block"
+        />
 
-        <div className="sidebar-buttons flex">
+        <SidebarMenu
+          currentHash={currentHash}
+          setCurrentHash={setCurrentHash}
+          className="block sm:hidden"
+        />
+
+        <div className="sidebar-buttons sm:flex hidden">
           {/* Theme toggle button with tooltip */}
           <div className={clsx(
             "tooltip-wrapper flex justify-center items-center",
-            isCollapsed ? "w-full" : "w-1/2"
+            isCollapsed ? "w-full" : "lg:w-1/2 md:w-full sm:w-full w-full"
           )}>
             <button
               onClick={toggleTheme}
@@ -172,7 +169,7 @@ export default function Sidebar() {
           {/* Cursor toggle button with tooltip */}
           <div className={clsx(
             "tooltip-wrapper w-1/2 flex justify-center items-center",
-            isCollapsed && "hidden"
+            isCollapsed ? "hidden" : "lg:flex md:hidden sm:hidden hidden"
           )}>
             <button
               onClick={() => setShowCursorShadow(prev => !prev)}
@@ -190,13 +187,13 @@ export default function Sidebar() {
 
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 absolute -top-1 -right-2.5 z-10 hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
+          className="absolute -top-1 -right-2.5 z-10 hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link lg:block md:hidden sm:hidden hidden"
         >
           {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
       </div>
       {/* Floating cursor shadow */}
       <div id="cursor-shadow" className={`cursor-shadow ${showCursorShadow ? "" : "hidden"}`}></div>
-    </>
+    </section>
   );
 }

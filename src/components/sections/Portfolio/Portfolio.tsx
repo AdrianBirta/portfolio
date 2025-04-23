@@ -3,9 +3,9 @@ import HeadIntroSection from "@/components/HeadIntroSection";
 import SectionBlock from "@/components/SectionBlock";
 import ProjectCards from "@/components/sections/Portfolio/ProjectCards";
 
-export default function Portfolio() {
+export default function Portfolio({ className }: { className: string }) {
   return (
-    <section id="portfolio" className="hashSection rounded-xl p-6 pb-10">
+    <section id="portfolio" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

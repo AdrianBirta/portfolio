@@ -7,9 +7,9 @@ import FormContact from "@/components/sections/Contact/FormContact";
 import TitleSection from "@/components/TitleSection";
 import { Phone } from "@untitled-ui/icons-react";
 
-export default function Contact() {
+export default function Contact({ className }: { className: string }) {
   return (
-    <section id="contact" className="hashSection rounded-xl p-6 pb-10">
+    <section id="contact" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

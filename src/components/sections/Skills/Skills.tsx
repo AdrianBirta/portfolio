@@ -53,10 +53,9 @@ const skills: {
   ]
 };
 
-export default function Skills() {
-
+export default function Skills({ className }: { className: string }) {
   return (
-    <section id="skills" className="hashSection rounded-xl p-6 pb-10">
+    <section id="skills" className={className}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

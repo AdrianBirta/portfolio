@@ -26,15 +26,15 @@ export default function CardInterest({
           : ""
 
   return (
-    <div className="interest-card el-highlight flex w-[48%] items-center p-4 rounded-2xl">
+    <div className="interest-card el-highlight flex xl:w-[48%] w-full items-center p-4 rounded-2xl">
       <span className="bg-highlight rounded-full mr-5 p-2 flex items-center justify-center text-gray-100">{icon}</span>
       <div className="interest-content">
-        <div className="interest-name font-bold text-xl">{name}</div>
+        <div className="interest-name font-bold xl:text-xl lg:text-base text-xs">{name}</div>
         {
           !descriptionLink ? (
-            <div className="interest-description text-md text-gray-400">{description}</div>
+            <div className="interest-description xl:text-base text-xs text-gray-400">{description}</div>
           ) : (
-            <a className="text-highlight font-bold" href={href}>{description}</a>
+            <a className="text-highlight font-bold lg:text-base text-xs" href={href}>{description}</a>
           )
         }
       </div>

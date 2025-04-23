@@ -1,4 +1,4 @@
-export default function CardTestimonial({
+export default function SlideTestimonial({
   text,
   picture,
   name,
@@ -15,8 +15,8 @@ export default function CardTestimonial({
 }
 ) {
   return (
-    <div className="testimonial-card w-1/4 px-2">
-      <div className="qoute-test text-xs el-highlight p-4 rounded-2xl mb-8 relative xl:h-46 lg:h-47 md:h-49 sm:h-50 h-50">
+    <div className="testimonial-card md:h-140 sm:h-120 h-120">
+      <div className="qoute-test text-xs el-highlight p-4 rounded-2xl mb-8 relative xl: h-35 lg:h-48 md:h-52 ms:h-54">
         <span className="text-5xl text-highlight font-extrabold align-bottom leading-0 mr-2">"</span>
         <p className="inline">{text}</p>
         <span className="text-5xl text-highlight font-extrabold align-bottom leading-0 ml-2">"</span>
