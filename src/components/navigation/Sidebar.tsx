@@ -1,17 +1,14 @@
 "use client"
 
-import NavLink from "@/components/navigation/NavLink";
 import SidebarMenu from "@/components/navigation/SidebarMenu";
 import SidebarNav from "@/components/navigation/SidebarNav";
 import {
-  User03, GraduationHat02, Briefcase02, Mail01,
   Moon01, Sun, ArrowCircleBrokenUpLeft, ArrowNarrowUpLeft,
   ChevronRight,
   ChevronLeft,
-  Tool02,
-  FolderCheck,
 } from "@untitled-ui/icons-react";
 import clsx from "clsx";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Sidebar() {
@@ -98,7 +95,7 @@ export default function Sidebar() {
     <section>
       <div className={clsx(
         "sidebar sm:rounded-xl rounded-sm overflow-hidden transition-all duration-300 sm:pb-0 pb-0",
-        isCollapsed ? "w-[110px] h-[110]" : "lg:w-[390px] md:w-[110px] sm:w-[110px] sm:h-full sm:mb-0 mb-1 w-full"
+        isCollapsed ? "sm:w-[110px] w-full h-full  sm:mb-0 mb-1" : "lg:w-[300px] md:w-[110px] sm:w-[110px] sm:h-full sm:mb-0 mb-1 w-full"
       )}>
 
         <button
@@ -110,13 +107,17 @@ export default function Sidebar() {
 
         <div className="sidebar-header p-6 text-center">
           <div className="relative inline-block">
-            <img
-              src="/images/profilePicture.png"
+            <Image
+              src="https://res.cloudinary.com/dx6bqc3yp/image/upload/profilePicture"
               alt="Profile Picture"
+              width={130}
+              height={145}
               className={clsx(
                 "m-auto profilePic transition-all duration-300",
-                isCollapsed ? "w-14 h-16" : "w-[130px]"
+                isCollapsed ? "sm:w-14 sm:h-16 w-[130px]" : "w-[130px]"
               )}
+              sizes="(max-width: 1024px) 60px, 130px"
+              priority={true}
             />
             <div className="status-dot-wrapper">
               <span className="w-4 h-4 bg-green-500 border-2 border-white rounded-full status-dot" />
@@ -127,7 +128,14 @@ export default function Sidebar() {
           </div>
           <span className={isCollapsed ? "hidden" : "lg:block md:hidden sm:hidden "}>
             <div className="flex items-center justify-center mt-2">
-              <img src="/images/iconM24.png" alt="Monitor code" className="mr-2" />
+              <Image
+                width={24}
+                height={24}
+                src="https://res.cloudinary.com/dx6bqc3yp/image/upload/iconM24"
+                alt="Monitor code"
+                className="mr-2"
+                priority={true}
+              />
               <p className="text-2xl">Adrian <span className="text-highlight">Birta</span></p>
             </div>
             <p className="text-md font-bold text-gray-400">Senior Frontend Developer</p>

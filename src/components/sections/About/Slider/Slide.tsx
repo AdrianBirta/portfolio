@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SlideTestimonial({
   text,
   picture,
@@ -23,7 +25,13 @@ export default function SlideTestimonial({
         <div className="triangle"></div>
       </div>
       <div className="avatar-client flex flex-col items-center">
-        <img src={`/images/${picture}.png`} alt="avatar" className="rounded-full w-40 mb-2" />
+        <Image
+          width={160}
+          height={164}
+          src={`https://res.cloudinary.com/dx6bqc3yp/image/upload/${picture}`}
+          alt="avatar"
+          className="rounded-full mb-2"
+        />
         <a href={linkedin} target="_blank" className="name text-xl text-highlight">{name}</a>
         <div className="title text-xs text-gray-400">{role} at <span className="font-bold">{company}</span></div>
       </div>

@@ -10,8 +10,8 @@ export default function BadgePill({
 }) {
   return (
     <div className={clsx(
-      "badge-bg-highlight px-6 mx-2 my-1 flex items-center",
-      date ? "sm:text-base text-sm sm:h-11 h-8 sm:rounded-2xl rounded-xl" : "rounded-2xl text-xs h-8"
+      "badge-bg-highlight px-6 mx-2 mb-1 flex items-center",
+      date ? "sm:text-base text-sm sm:h-11 h-8 lg:min-w-32 sm:rounded-2xl rounded-xl" : "rounded-2xl text-xs h-8"
     )}>
       {!date && <CameraLens className="w-4 h-4 mr-2" />}
       {text}

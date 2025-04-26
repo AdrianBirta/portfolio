@@ -74,7 +74,6 @@ export default function TimelineList() {
             <div className="circle-avatar start flex items-center justify-center rounded-full"></div>
           </div>
         </li>
-
       </ul>
     </SectionBlock>
   )

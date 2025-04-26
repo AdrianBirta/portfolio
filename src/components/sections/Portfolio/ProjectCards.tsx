@@ -2,14 +2,13 @@ import ProjectCard from "@/components/sections/Portfolio/ProjectCard";
 
 export default function ProjectCards() {
   return (
-    <div className="projects-wrapper flex flex-wrap gap-6 justify-center">
+    <div className="projects-wrapper grid gap-4 [grid-template-columns:repeat(auto-fit,_minmax(300px,_1fr))] sm:pb-0 pb-10">
       <ProjectCard
         companyName="Adfin"
         subtitle="FinTech • Web Platform"
         badges={["FinTech", "React.js", "Java"]}
         textItem={{
           text: "A billing automation SaaS platform focused on improving invoicing workflows for SMEs. Designed for transparency, control, and seamless integration.",
-          highlights: ["billing automation", "invoicing workflows", "transparency"]
         }}
         websiteURL="https://www.adfin.com/"
         linkedinURL="https://www.linkedin.com/company/adfin-fs/"
@@ -21,7 +20,6 @@ export default function ProjectCards() {
         badges={["Data Intelligence", "TypeScript", "Redux"]}
         textItem={{
           text: "A leading platform for location-based analytics, real-time geospatial data, and visual intelligence tailored for enterprise-grade decision making.",
-          highlights: ["location-based analytics", "real-time geospatial data", "visual intelligence"]
         }}
         websiteURL="https://www.babelstreet.com/"
         linkedinURL="https://www.linkedin.com/company/babelstreet/"
@@ -33,7 +31,6 @@ export default function ProjectCards() {
         badges={["Cloud Consulting", "Java", "Azure"]}
         textItem={{
           text: "A global technology partner delivering digital transformation, data analytics, and cloud services across healthcare, finance, and telecom.",
-          highlights: ["digital transformation", "data analytics", "cloud services"]
         }}
         websiteURL="https://www.persistent.com/"
         linkedinURL="https://www.linkedin.com/company/persistent-systems/"
@@ -45,7 +42,6 @@ export default function ProjectCards() {
         badges={["AWS", "React.js", "Java"]}
         textItem={{
           text: "UK-based tech consultancy offering custom software development, agile teams, and digital modernization solutions through a collaborative approach.",
-          highlights: ["custom software development"]
         }}
         websiteURL="https://amdaris.com/"
         linkedinURL="https://www.linkedin.com/company/amdaris-group/"
@@ -57,7 +53,6 @@ export default function ProjectCards() {
         badges={["E-commerce", "Next.js", "Stripe"]}
         textItem={{
           text: "A platform for buying and selling refurbished tech and second-hand media. Focused on sustainability, device recycling, and consumer savings.",
-          highlights: ["refurbished tech", "sustainability"]
         }}
         websiteURL="https://www.musicmagpie.co.uk/"
         linkedinURL="https://www.linkedin.com/company/musicmagpie/"
@@ -69,7 +64,6 @@ export default function ProjectCards() {
         badges={["Healthcare", "Vue.js", "Firebase"]}
         textItem={{
           text: "A modern medical services platform focused on physical therapy, delivering enhanced user experience, performance, and mobile accessibility.",
-          highlights: ["physical therapy", "user experience", "mobile accessibility"]
         }}
         websiteURL="https://improvemed.gr"
         linkedinURL="https://www.linkedin.com/company/improvemed/"
@@ -81,7 +75,6 @@ export default function ProjectCards() {
         badges={["Multilingual E-commerce", "Nuxt.js", "Tailwind CSS"]}
         textItem={{
           text: "A Swiss-based e-commerce business offering localized shopping experiences, intuitive UX, and customer-focused digital platforms.",
-          highlights: ["localized shopping experiences", "customer-focused"]
         }}
         websiteURL="https://www.koala.ch/"
         linkedinURL="https://www.linkedin.com/company/koala-s-a-/"
@@ -93,7 +86,6 @@ export default function ProjectCards() {
         badges={["Retail", "Magento", "PHP"]}
         textItem={{
           text: "Swiss online store offering a diverse range of quality footwear, combining elegant design, user-friendly shopping, and reliable delivery.",
-          highlights: ["quality footwear", "elegant design"]
         }}
         websiteURL="https://www.aeschbach-chaussures.ch"
         linkedinURL="https://www.linkedin.com/company/chaussures-aeschbach-sa/"

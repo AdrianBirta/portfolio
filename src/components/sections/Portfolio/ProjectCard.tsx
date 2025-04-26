@@ -1,5 +1,4 @@
 import Icon from "@/components/icons/Icon";
-import { RichTextItem } from "@/components/TextBlock";
 import TextBlock from "@/components/TextBlock";
 import { Globe02 } from "@untitled-ui/icons-react";
 
@@ -14,30 +13,27 @@ export default function ProjectCard({
   companyName: string;
   subtitle: string;
   badges: string[];
-  textItem: RichTextItem;
+  textItem: { text: string };
   websiteURL: string;
   linkedinURL: string;
 }) {
   return (
-    <div className="project-card relative el-highlight flex flex-col w-[30%] h-80 p-4 rounded-2xl justify-between">
+    <div className="project-card relative el-highlight flex flex-col p-4 rounded-2xl justify-between">
       <div className="flex flex-col">
         <div className="head-card mb-4">
           <h3 className="text-highlight text-2xl">{companyName}</h3>
           <div className="subtitle text-gray-400 text-sm">{subtitle}</div>
         </div>
-        <div className="badges flex flex wrap gap-2 items-start">
+        <div className="badges flex flex-wrap gap-2 items-start">
           {badges.map(badge => (
             <div key={badge} className="badge text-xs px-2 py-1 badge-bg-highlight rounded-md">{badge}</div>
           ))}
         </div>
-        <div className="description">
-          <TextBlock
-            item={{
-              text: textItem.text,
-              highlights: textItem.highlights
-            }}
-          />
-        </div>
+        <TextBlock
+          item={{
+            text: textItem.text,
+          }}
+        />
       </div>
       <div className="links flex gap-2">
         <a href={websiteURL} className="website p-1 badge-bg-highlight rounded-full flex items-center justify-center">

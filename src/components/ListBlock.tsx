@@ -1,8 +1,3 @@
-export type RichTextItem = {
-  text: string;
-  highlights?: string[];
-}
-
 export default function ListBlock({
   intro1,
   focus,
@@ -10,22 +5,8 @@ export default function ListBlock({
 }: {
   intro1?: string;
   focus?: string;
-  items: RichTextItem[];
+  items: { text: string }[];
 }) {
-  function highlightWords(text: string, highlights?: string[]) {
-    if (!highlights || highlights.length === 0) return text;
-
-    const regex = new RegExp(`(${highlights.join('|')})`, 'gi');
-    const parts = text.split(regex);
-
-    return parts.map((part, idx) =>
-      highlights.some(h => h.toLowerCase() === part.toLowerCase()) ? (
-        <span key={idx} className="font-semibold text-highlight">{part}</span>
-      ) : (
-        part
-      )
-    );
-  }
 
   return (
     <div className="main-education-section mt-4">
@@ -41,9 +22,9 @@ export default function ListBlock({
       )}
       <ul className="list-disc pl-8 xl:text-base sm:text-sm text-xs">
         {
-          items.map((item: RichTextItem, i) => (
+          items.map((item: { text: string }, i) => (
             <li key={i} className="m-2">
-              {highlightWords(item.text, item.highlights)}
+              {item.text}
             </li>
           ))
         }

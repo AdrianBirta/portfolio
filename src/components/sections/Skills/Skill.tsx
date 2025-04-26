@@ -15,7 +15,7 @@ export default function Skill({
   years: string;
 }) {
   return (
-    <div className="skill flex gap-4 w-[30%] items-center p-4 bg-light-highlight rounded-2xl">
+    <div className="skill flex gap-4 xl:w-[30%] md:w-[47%] w-[100%] items-center p-4 bg-light-highlight rounded-2xl">
       <Icon name={iconName} className="w-8 h-8" />
       <SkillBar skill={skillName} years={years} />
     </div>

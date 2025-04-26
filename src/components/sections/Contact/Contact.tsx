@@ -30,7 +30,7 @@ export default function Contact({ className }: { className: string }) {
       <SectionBlock>
         <TitleSection leftBorder title="Or if you" titleHigh="prefer" />
 
-        <div className="interests flex flex-wrap gap-6 justify-center">
+        <div className="interests flex flex-wrap gap-6 justify-center sm:pb-0 pb-10">
           <CardInterest
             icon={<Phone className="w-10 h-10" />}
             name={"Phone"}

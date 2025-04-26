@@ -1,6 +1,6 @@
 import BadgePill from "@/components/BadgePill";
 import HeadBlock from "@/components/HeadBlock";
-import ListBlock, { RichTextItem } from "@/components/ListBlock";
+import ListBlock from "@/components/ListBlock";
 import { Tool02 } from "@untitled-ui/icons-react";
 
 export default function TimelineItem({
@@ -10,7 +10,7 @@ export default function TimelineItem({
   industry
 }: {
   headBlock: { titleHigh: string, title: string, location: string, date: string },
-  listBlock: { intro1: string, focus: string, items: RichTextItem[] },
+  listBlock: { intro1: string, focus: string, items: { text: string }[] },
   skills: string[],
   industry: string;
 }) {

@@ -1,14 +1,13 @@
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
 import SectionBlock from "@/components/SectionBlock";
-import Skill from "@/components/sections/Skills/Skill";
 import TitleSection from "@/components/TitleSection";
 
 import { iconMap } from "@/components/icons/iconMap";
 import Slider from "@/components/sections/Skills/Slider/Slider";
+import SkillsWrapper from "@/components/sections/Skills/SkillsWrapper";
 
-
-type SectionType = {
+export type SectionType = {
   iconName: keyof typeof iconMap,
   skillName: string,
   years: string
@@ -72,28 +71,18 @@ export default function Skills({ className }: { className: string }) {
       <SectionBlock>
         <TitleSection leftBorder={true} title="Frontend" />
         <div className="skills-container flex flex-wrap gap-6 justify-center">
-          {skills.frontend.map((skill) => (
-            <Skill
-              key={skill.iconName}
-              iconName={skill.iconName}
-              skillName={skill.skillName}
-              years={skill.years}
-            />
-          ))}
+          <SkillsWrapper
+            skills={skills.frontend}
+          />
         </div>
       </SectionBlock>
 
       <SectionBlock>
         <TitleSection leftBorder={true} title="Backend" />
-        <div className="skills-container flex flex-wrap gap-6 justify-center">
-          {skills.backend.map((skill) => (
-            <Skill
-              key={skill.iconName}
-              iconName={skill.iconName}
-              skillName={skill.skillName}
-              years={skill.years}
-            />
-          ))}
+        <div className="skills-container flex flex-wrap gap-6 justify-center sm:pb-0 pb-10">
+          <SkillsWrapper
+            skills={skills.backend}
+          />
         </div>
       </SectionBlock>
 

@@ -1,9 +1,9 @@
 "use client"
 
-import { useActionState, useState } from "react"
+import { useActionState } from "react"
 
 import { Check, Edit05, Feather, Loading01, Mail02, Mail03 } from "@untitled-ui/icons-react"
-import { FieldErrors, MessageFormState, sendMessage } from "@/lib/sendMessageHandle"
+import { MessageFormState, sendMessage } from "@/lib/sendMessageHandle"
 import { useFieldError } from "@/lib/useFieldError"
 import clsx from "clsx"
 
@@ -22,17 +22,6 @@ export default function FormContact() {
   const subjectError = useFieldError("subject", state);
   const messageError = useFieldError("message", state);
   const globalError = useFieldError("global", state);
-
-  // Check fields error form
-  const isFieldError = (state: MessageFormState): state is {
-    errors: FieldErrors;
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  } => {
-    return "errors" in state && !("global" in state.errors)
-  }
 
   if ("success" in state && state.success) {
     return (
@@ -58,8 +47,8 @@ export default function FormContact() {
           {globalError.localError}
         </p>
       )}
-      <div className="form-fields flex w-full justify-between">
-        <div className="details-fields w-[50%]">
+      <div className="form-fields flex lg:flex-row flex-col w-full justify-between">
+        <div className="details-fields lg:w-[50%] w-[100%]">
           <div className="form-field rounded-xl transition-colors">
             <label htmlFor="name" className="flex items-center p-4">
               <Mail03 className="w-5 h-5 " />
@@ -124,7 +113,7 @@ export default function FormContact() {
           </div>
         </div>
 
-        <div className="form-field w-[50%] mx-4 rounded-tr-xl">
+        <div className="form-field lg:w-[50%] w-[100%] lg:mx-4 mx-0 rounded-tr-xl">
           <textarea
             name="message"
             placeholder="Message*"
@@ -147,15 +136,15 @@ export default function FormContact() {
         <button
           type="submit"
           disabled={isPending}
-          className="form-button-submit rounded-xl w-[200px]"
+          className="form-button-submit rounded-xl w-[200px] lg:py-2 py-1 lg:px-3.5 px-2"
         >
           {isPending ? (
-            <p className="flex items-center text-xl justify-evenly">
+            <p className="flex items-center lg:text-xl text-base justify-evenly">
               <Loading01 className="w-5 h-5" />
               <span>Sending ...</span>
             </p>
           ) : (
-            <p className="flex items-center text-xl justify-evenly">
+            <p className="flex items-center lg:text-xl text-base justify-evenly">
               <Mail02 className="w-5 h-5" />
               <span>Send Message</span>
             </p>

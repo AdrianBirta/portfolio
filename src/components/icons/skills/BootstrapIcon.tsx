@@ -4,7 +4,6 @@ type IconProps = {
   className?: string;
 }
 
-
 export default function BootstrapIcon({ size = 24, color = "#7952B3", className }: IconProps) {
   return (
     <svg

@@ -10,19 +10,19 @@ export default function HeadBlock({
   date,
   timeline
 }: {
-  titleHigh: string;
-  title: string;
-  location: string;
-  date: string;
+  titleHigh?: string;
+  title?: string;
+  location?: string;
+  date?: string;
   timeline?: boolean;
 }) {
   return (
-    <div className="head-education-section flex flex-wrap justify-between items-top">
+    <div className="head-education-section flex justify-between items-top">
       <div>
         <TitleSection title={title} titleHigh={titleHigh} highFirst={true} timeline={timeline} />
-        <SubtitleSmall icon={<Building01 className="w-5 h-5 mr-2" />} text={location} />
+        <SubtitleSmall icon={<Building01 className="w-5 h-5 mr-2" />} text={location ?? ""} />
       </div>
-      <BadgePill date={true} text={date} />
+      <BadgePill date={true} text={date ?? ""} />
     </div>
   )
 }

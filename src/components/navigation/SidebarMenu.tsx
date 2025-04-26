@@ -1,8 +1,6 @@
-"use client"
-
+import { useEffect, useState, useMemo } from "react";
 import NavLink from "@/components/navigation/NavLink";
-import { Briefcase02, Clock, FolderCheck, GraduationHat02, Image05, Mail01, Tool02, User03 } from "@untitled-ui/icons-react";
-import { useEffect, useState } from "react";
+import { Briefcase02, Clock, FolderCheck, GraduationHat02, Image04, Mail01, Tool02, User03 } from "@untitled-ui/icons-react";
 
 export type ChapterKey = keyof typeof sectionsTop;
 
@@ -20,18 +18,18 @@ const chaptersBottom: {
 const sectionsTop = {
   history: [
     { name: "Education", href: "education" },
-    { name: "Experience", href: "experience" }
+    { name: "Experience", href: "experience" },
   ],
   showcase: [
     { name: "Skills", href: "skills" },
-    { name: "Portfolio", href: "portfolio" }
-  ]
+    { name: "Portfolio", href: "portfolio" },
+  ],
 };
 
 export default function SidebarMenu({
   className,
   currentHash,
-  setCurrentHash
+  setCurrentHash,
 }: {
   className: string;
   currentHash: string;
@@ -40,26 +38,6 @@ export default function SidebarMenu({
   const [selectedChapter, setSelectedChapter] = useState<ChapterKey | null | undefined>(null);
   const [historySelection, setHistorySelection] = useState("education");
   const [showcaseSelection, setShowcaseSelection] = useState("skills");
-
-  const [, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const current = document.documentElement.classList.contains("light-theme")
-      ? "light"
-      : "dark";
-    setTheme(current);
-
-    const observer = new MutationObserver(() => {
-      const updatedTheme = document.documentElement.classList.contains("light-theme")
-        ? "light"
-        : "dark";
-      setTheme(updatedTheme);
-    });
-
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const getHref = (val: { name: string; href: string }) => val.href === currentHash;
@@ -77,38 +55,41 @@ export default function SidebarMenu({
         : null;
 
     setSelectedChapter(() => getCurrentHashChapterLink);
-  }, [currentHash])
+  }, [currentHash]);
 
-  const getIconNavLink = (name: string) => {
-    switch (name) {
-      case "Home":
-        return <User03 className="w-5 h-5 mb-0.5" />
-      case "Education":
-        return <GraduationHat02 className="w-5 h-5 mr-2" />
-      case "Skills":
-        return <Tool02 className="w-5 h-5 mr-2" />
-      case "Experience":
-        return <Briefcase02 className="w-5 h-5 mr-2" />
-      case "Portfolio":
-        return <FolderCheck className="w-5 h-5 mr-2" />
-      case "Contact":
-        return <Mail01 className="w-5 h-5 mb-0.5" />
-      case "History":
-        return <Clock className="w-5 h-5 mb-0.5" />
-      case "Showcase":
-        return <Image05 className="w-5 h-5 mb-0.5" />
-      default:
-        return null
-    }
-  }
+  // Memoizing the icon function to avoid unnecessary recalculations
+  const getIconNavLink = useMemo(
+    () => (name: string) => {
+      switch (name) {
+        case "Home":
+          return <User03 className="w-5 h-5 mb-0.5" />;
+        case "Education":
+          return <GraduationHat02 className="w-5 h-5 mr-2" />;
+        case "Skills":
+          return <Tool02 className="w-5 h-5 mr-2" />;
+        case "Experience":
+          return <Briefcase02 className="w-5 h-5 mr-2" />;
+        case "Portfolio":
+          return <FolderCheck className="w-5 h-5 mr-2" />;
+        case "Contact":
+          return <Mail01 className="w-5 h-5 mb-0.5" />;
+        case "History":
+          return <Clock className="w-5 h-5 mb-0.5" />;
+        case "Showcase":
+          return <Image04 className="w-5 h-5 mb-0.5" />;
+        default:
+          return null;
+      }
+    },
+    [] // Empty dependency array to memoize the function once
+  );
 
   return (
     <div className={className}>
-      {
-        selectedChapter &&
+      {selectedChapter && (
         <nav className="top-menu h-12">
           <ul className="footer-menu-list w-full h-full flex items-center">
-            {sectionsTop[selectedChapter].map(section => {
+            {sectionsTop[selectedChapter].map((section) => {
               return (
                 <NavLink
                   key={section.name}
@@ -120,37 +101,35 @@ export default function SidebarMenu({
                   menuLink={true}
                   menuLinkTop={true}
                 />
-              )
+              );
             })}
           </ul>
         </nav>
-      }
+      )}
 
       <nav className="footer-menu fixed bottom-0 left-0 right-0 h-15 z-20 bg-sidebar">
         <ul className="footer-menu-list w-full h-full flex items-center">
-          {
-            chaptersBottom.map(chapter => (
-              <NavLink
-                key={chapter.name}
-                href={
-                  chapter.link === "history"
-                    ? historySelection
-                    : chapter.link === "showcase"
-                      ? showcaseSelection
-                      : chapter.href
-                }
-                section={chapter.name}
-                Icon={getIconNavLink(chapter.name)}
-                currentHash={currentHash}
-                setCurrentHash={setCurrentHash}
-                menuLink={true}
-                chapterLink={chapter.link}
-                handleClick={setSelectedChapter}
-              />
-            ))
-          }
+          {chaptersBottom.map((chapter) => (
+            <NavLink
+              key={chapter.name}
+              href={
+                chapter.link === "history"
+                  ? historySelection
+                  : chapter.link === "showcase"
+                    ? showcaseSelection
+                    : chapter.href
+              }
+              section={chapter.name}
+              Icon={getIconNavLink(chapter.name)}
+              currentHash={currentHash}
+              setCurrentHash={setCurrentHash}
+              menuLink={true}
+              chapterLink={chapter.link}
+              handleClick={setSelectedChapter}
+            />
+          ))}
         </ul>
       </nav>
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import Icon from "@/components/icons/Icon";
 import TitleSection from "@/components/TitleSection";
-import { Building06, Cube04, Mail02 } from "@untitled-ui/icons-react";
+import { Building06, Mail02 } from "@untitled-ui/icons-react";
 
 export default function HeadIntroSection({
   intro,

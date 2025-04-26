@@ -8,7 +8,7 @@ export default function Interests() {
     <SectionBlock>
       <TitleSection leftBorder={true} title="Professional" titleHigh="Interests" />
 
-      <div className="interests flex flex-wrap gap-6 justify-center">
+      <div className="interests flex flex-wrap gap-6 justify-center sm:pb-0 pb-10">
         <CardInterest
           icon={<AlertHexagon className="w-10 h-10" />}
           name={"Bug Fixing"}

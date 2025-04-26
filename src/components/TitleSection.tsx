@@ -32,7 +32,7 @@ export default function TitleSection({
             {titleHigh && (
               <span className={clsx(
                 timeline
-                  ? "inline"
+                  ? "inline wrap-break-word"
                   : "lg:inline md:hidden sm:hidden hidden"
               )}>
                 <span className="text-highlight">{titleHigh}</span> {title && title}
@@ -48,14 +48,14 @@ export default function TitleSection({
             {title &&
               titleHighMd ? (
               <span className="lg:inline md:hidden sm:hidden hidden">{title} </span>
-            ) : title
+            ) : <span>{title} </span>
             }
 
             {titleHigh &&
               titleHighMd ? (
               <>
                 <span className="text-highlight lg:hidden md:inline sm:inline inline">{titleHighMd}</span>
-                <span className="text-highlight lg:inline md:hidden sm:hidden hidden">{titleHigh}</span>
+                <span className="text-highlight lg:inline md:hidden sm:hidden hidden"> {titleHigh}</span>
               </>
             ) : (
               <span className="text-highlight">{titleHigh}</span>
