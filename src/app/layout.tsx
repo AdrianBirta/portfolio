@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import HashRedirect from "@/lib/HashRedirect";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Portfolio - Adrian Birta",
@@ -16,6 +17,21 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-137G9GGKST"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-137G9GGKST');
+          `}
+        </Script>
+      </head>
       <body className="h-screen m-0 p-0 min-h-80">
         <HashRedirect />
         <main className="h-screen m-0 p-0 min-h-80">
