@@ -22,7 +22,6 @@
   --line-width: 4px;
   --line-color: var(--highlight-bg-color);
   --badge-highlight-bg-color: #181824ea;
-  background-image: var(--bg-image);
 }
 
 /* Light Theme */
@@ -45,7 +44,6 @@
   --line-width: 4px;
   --line-color: var(--highlight-bg-color);
   --badge-highlight-bg-color: #f6f6f6;
-  background-image: var(--bg-image);
 }
 
 /* ===== BASE GLOBAL STYLES ===== */
@@ -233,6 +231,7 @@ body {
 }
 
 .hashSection.previous {
+  background-color: red;
   animation: zoomOut 1s ease forwards;
   z-index: 1;
 }
@@ -386,6 +385,8 @@ ul.timeline-list .timeline-item .circle-avatar.start {
 }
 } */
 
+
+
 #skills section .swiper {
   padding-bottom: 60px;
 }
@@ -460,6 +461,19 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   background-color: var(--scrollbar-thumb-hover);
 }
 
+.spinner-border {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--scrollbar-thumb);
+  width: 40px;
+  height: 40px;
+  animation: spin 0.7s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes flyIn {
   0% {
@@ -492,6 +506,27 @@ ul.timeline-list .timeline-item .circle-avatar.start {
 
   100% {
     width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade-in animation for the full-screen loading overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -553,5 +588,18 @@ ul.timeline-list .timeline-item .circle-avatar.start {
     position: relative;
     bottom: calc(var(--circle-size) / 2);
     right: calc(var(--circle-size) / 2);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #about section .swiper {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about section .swiper {
+    padding-bottom: 0;
+    ;
   }
 }

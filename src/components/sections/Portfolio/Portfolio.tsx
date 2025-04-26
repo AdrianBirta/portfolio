@@ -3,9 +3,9 @@ import HeadIntroSection from "@/components/HeadIntroSection";
 import SectionBlock from "@/components/SectionBlock";
 import ProjectCards from "@/components/sections/Portfolio/ProjectCards";
 
-export default function Portfolio({ className }: { className: string }) {
+export default function Portfolio({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
   return (
-    <section id="portfolio" className={className}>
+    <section id="portfolio" className={className} onTransitionEnd={onTransitionEnd}>
       <CubeTopLeftHalf />
 
       <HeadIntroSection

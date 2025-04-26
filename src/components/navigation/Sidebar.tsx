@@ -108,7 +108,7 @@ export default function Sidebar() {
         <div className="sidebar-header p-6 text-center">
           <div className="relative inline-block">
             <Image
-              src="https://res.cloudinary.com/dx6bqc3yp/image/upload/profilePicture"
+              src="/images/profilePicture.webp"
               alt="Profile Picture"
               width={130}
               height={145}
@@ -131,7 +131,7 @@ export default function Sidebar() {
               <Image
                 width={24}
                 height={24}
-                src="https://res.cloudinary.com/dx6bqc3yp/image/upload/iconM24"
+                src="/images/iconM24.webp"
                 alt="Monitor code"
                 className="mr-2"
                 priority={true}

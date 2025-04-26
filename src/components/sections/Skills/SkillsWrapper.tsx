@@ -4,7 +4,7 @@ import Skill from "@/components/sections/Skills/Skill";
 import { SectionType } from "@/components/sections/Skills/Skills";
 import { useEffect, useState } from "react";
 
-export default function SkillsWrapper({ skills }: { skills: SectionType[] }) {
+export default function SkillsWrapper({ skills, scroll }: { skills: SectionType[], scroll?: boolean }) {
   const [isMobile, setIsMobile] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
@@ -30,14 +30,25 @@ export default function SkillsWrapper({ skills }: { skills: SectionType[] }) {
             years={skill.years}
           />
         ))
-        : skills.map((skill) => (
-          <Skill
-            key={skill.iconName}
-            iconName={skill.iconName}
-            skillName={skill.skillName}
-            years={skill.years}
-          />
-        ))}
+        :
+        scroll ?
+          skills.map((skill) => (
+            <Skill
+              key={skill.iconName}
+              iconName={skill.iconName}
+              skillName={skill.skillName}
+              years={skill.years}
+            />
+          ))
+          : skills.slice(0, 9).map((skill) => (
+            <Skill
+              key={skill.iconName}
+              iconName={skill.iconName}
+              skillName={skill.skillName}
+              years={skill.years}
+            />
+          ))
+      }
 
       {isMobile && !showMore &&
         <span

@@ -1,10 +1,22 @@
+"use client"
+
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
 import TimelineList from "@/components/sections/Education/TimelineList";
+import { useCallback, useState } from "react";
 
-export default function Education({ className }: { className: string }) {
+export default function Education({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+  const [scroll, setScroll] = useState(false);
+
+  const handleScroll = useCallback(() => setScroll(true), [scroll])
+
   return (
-    <section id="education" className={className}>
+    <section
+      id="education"
+      className={className}
+      onTransitionEnd={onTransitionEnd}
+      onScrollEnd={() => !scroll && handleScroll()}
+    >
       <CubeTopLeftHalf />
 
       <HeadIntroSection
@@ -15,7 +27,7 @@ export default function Education({ className }: { className: string }) {
         highFirst={true}
       />
 
-      <TimelineList />
+      <TimelineList scroll={scroll} />
     </section>
   )
 }

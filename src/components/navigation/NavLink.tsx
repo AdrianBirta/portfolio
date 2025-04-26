@@ -1,7 +1,6 @@
 "use client";
 
 import { ChapterKey } from "@/components/navigation/SidebarMenu";
-import HashNavigationHandle from "@/lib/HashNavigationHandle";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
@@ -67,8 +66,7 @@ export default function NavLink({
       )}
 
       onClick={() => (
-        menuLink && handleClick && handleClick(chapterLink),
-        HashNavigationHandle(href!, setCurrentHash)
+        menuLink && handleClick && handleClick(chapterLink)
       )}
     >
       {Icon}

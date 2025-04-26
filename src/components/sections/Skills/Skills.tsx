@@ -1,3 +1,5 @@
+"use client"
+
 import CubeTopLeftHalf from "@/components/CubeTopLeftHalf";
 import HeadIntroSection from "@/components/HeadIntroSection";
 import SectionBlock from "@/components/SectionBlock";
@@ -6,6 +8,7 @@ import TitleSection from "@/components/TitleSection";
 import { iconMap } from "@/components/icons/iconMap";
 import Slider from "@/components/sections/Skills/Slider/Slider";
 import SkillsWrapper from "@/components/sections/Skills/SkillsWrapper";
+import { useCallback, useState } from "react";
 
 export type SectionType = {
   iconName: keyof typeof iconMap,
@@ -52,9 +55,18 @@ const skills: {
   ]
 };
 
-export default function Skills({ className }: { className: string }) {
+export default function Skills({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+  const [scroll, setScroll] = useState(false);
+
+  const handleScroll = useCallback(() => setScroll(true), [scroll])
+
   return (
-    <section id="skills" className={className}>
+    <section
+      id="skills"
+      className={className}
+      onTransitionEnd={onTransitionEnd}
+      onScrollEnd={() => !scroll && handleScroll()}
+    >
       <CubeTopLeftHalf />
 
       <HeadIntroSection
@@ -73,18 +85,23 @@ export default function Skills({ className }: { className: string }) {
         <div className="skills-container flex flex-wrap gap-6 justify-center">
           <SkillsWrapper
             skills={skills.frontend}
+            scroll={scroll}
           />
         </div>
       </SectionBlock>
 
-      <SectionBlock>
-        <TitleSection leftBorder={true} title="Backend" />
-        <div className="skills-container flex flex-wrap gap-6 justify-center sm:pb-0 pb-10">
-          <SkillsWrapper
-            skills={skills.backend}
-          />
-        </div>
-      </SectionBlock>
+      {scroll && (
+        <SectionBlock>
+          <TitleSection leftBorder={true} title="Backend" />
+          <div className="skills-container flex flex-wrap gap-6 justify-center sm:pb-0 pb-10">
+            <SkillsWrapper
+              skills={skills.backend}
+              scroll={scroll}
+            />
+          </div>
+        </SectionBlock>
+      )}
+
 
     </section>
   )

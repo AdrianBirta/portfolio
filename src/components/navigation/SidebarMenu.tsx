@@ -81,7 +81,7 @@ export default function SidebarMenu({
           return null;
       }
     },
-    [] // Empty dependency array to memoize the function once
+    []
   );
 
   return (

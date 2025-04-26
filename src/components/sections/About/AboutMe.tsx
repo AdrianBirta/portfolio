@@ -9,7 +9,7 @@ export default function AboutMe() {
 
       <div className="content flex lg:flex-row md:flex-col flex-col items-center gap-8">
         <Image
-          src={`https://res.cloudinary.com/dx6bqc3yp/image/upload/iconM256`}
+          src={`/images/iconM256.webp`}
           alt="Logo monitor"
           width={256} // You can adjust this based on actual image size
           height={256}

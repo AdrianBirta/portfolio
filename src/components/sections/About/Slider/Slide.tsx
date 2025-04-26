@@ -17,7 +17,7 @@ export default function SlideTestimonial({
 }
 ) {
   return (
-    <div className="testimonial-card md:h-140 sm:h-120 h-120">
+    <div className="testimonial-card h-120">
       <div className="qoute-test text-xs el-highlight p-4 rounded-2xl mb-8 relative xl: h-35 lg:h-48 md:h-52 ms:h-54">
         <span className="text-5xl text-highlight font-extrabold align-bottom leading-0 mr-2">"</span>
         <p className="inline">{text}</p>
@@ -28,7 +28,7 @@ export default function SlideTestimonial({
         <Image
           width={160}
           height={164}
-          src={`https://res.cloudinary.com/dx6bqc3yp/image/upload/${picture}`}
+          src={`/images/${picture}.webp`}
           alt="avatar"
           className="rounded-full mb-2"
         />
