@@ -35,7 +35,7 @@ function SectionLoading({ name }: { name: string }) {
   return (
     <div className="flex justify-center items-center min-h-[200px] animate-pulse text-muted-foreground text-sm">
       <div className="flex flex-col items-center">
-        <div className="spinner-border animate-spin mb-2" role="status">
+        <div className="spinner-border animate-spin mb-2 border-color-highlight" role="status">
           <span className="sr-only text-highlight">Loading...</span>
         </div>
         <span className="text-highlight">Loading {name}...</span>
@@ -102,7 +102,7 @@ export default function SectionsWrapper() {
       {!mounted ? (
         <div className="fixed top-0 bottom-0 right-0 left-0 bg-black flex items-center justify-center z-50">
           <div className="flex flex-col items-center text-white sm:gap-4 gap-2">
-            <div className="spinner-border animate-spin mb-4" role="status">
+            <div className="spinner-border animate-spin mb-4 border" role="status">
               <span className="sr-only">Loading...</span>
             </div>
             <div className="text-center">
