@@ -41,15 +41,16 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
             "REACT.JS",
             "TYPESCRIPT",
             "REACT QUERY",
+            "STATE MANAGEMENT",
+            "REACT ROUTER",
             "MATERIAL-UI",
-            "REST APIS",
-            "XERO API",
+            "COMPONENT DESIGN",
+            "UI/UX",
             "HTML5",
             "CSS3",
-            "GITLAB",
-            "COMPONENT DESIGN",
-            "REACT ROUTER",
-            "UI/UX"
+            "REST",
+            "XERO API",
+            "GITLAB"
           ]}
           industry="FinTech"
         />
@@ -99,15 +100,22 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
             "REACT.JS",
             "TYPESCRIPT",
             "REDUX TOOLKIT",
+            "STATE MANAGEMENT",
+            "REACT ROUTER",
+            "COMPONENT DESIGN",
+            "UI/UX",
+            "HTML5",
+            "CSS3",
+            "REST",
+            "MICROSERVICES",
+            "AWS",
+            "UNIT TEST",
+            "JEST",
+            "CYPRESS",
             "MAPBOX.JS",
             "LEAFLET.JS",
             "TURF.JS",
-            "ARCGIS.JS",
-            "HTML5",
-            "CSS3",
-            "COMPONENT DESIGN",
-            "REACT ROUTER",
-            "UI/UX"
+            "ARCGIS.JS"
           ]}
           industry="Geospatial Services"
         />
@@ -149,7 +157,13 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               skills={[
                 "REACT.JS",
                 "REDUX",
+                "STATE MANAGEMENT",
+                "REACT ROUTER",
+                "COMPONENT DESIGN",
+                "UI/UX",
                 "TYPESCRIPT",
+                "REST",
+                "MICROSERVICES",
                 "MATERIAL-UI",
                 "COREUI",
                 "TAILWIND CSS",
@@ -158,9 +172,10 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
                 "HTML5",
                 "CSS3",
                 "SCSS",
-                "COMPONENT DESIGN",
-                "REACT ROUTER",
-                "UI/UX"
+                "AWS",
+                "UNIT TEST",
+                "JEST",
+                "CYPRESS"
               ]}
               industry="Enterprise"
             />
@@ -207,14 +222,22 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               skills={[
                 "REACT.JS",
                 "REDUX",
+                "STATE MANAGEMENT",
+                "REACT ROUTER",
+                "COMPONENT DESIGN",
+                "UI/UX",
                 "TYPESCRIPT",
                 "CHART.JS",
                 "D3.JS",
                 "HTML5",
                 "CSS3",
                 "SCSS",
-                "COMPONENT DESIGN",
-                "UI/UX"
+                "REST",
+                "MICROSERVICES",
+                "AZURE",
+                "UNIT TEST",
+                "JEST",
+                "CYPRESS"
               ]}
               industry="Healthcare"
             />
@@ -263,20 +286,25 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               skills={[
                 "REACT.JS",
                 "REDUX",
+                "STATE MANAGEMENT",
+                "REACT ROUTER",
                 "TYPESCRIPT",
                 "VUE.JS",
-                "LARAVEL",
-                "PHP",
-                "CODEIGNITER",
-                "MAGENTO",
-                "SCSS",
-                "SASS",
                 "HTML5",
                 "CSS3",
-                "JEST",
-                "JAVASCRIPT",
+                "SCSS",
+                "SASS",
                 "CSS FLEXBOX",
                 "CSS GRID",
+                "JAVASCRIPT",
+                "PHP",
+                "LARAVEL",
+                "CODEIGNITER",
+                "MAGENTO",
+                "REST",
+                "MICROSERVICES",
+                "UNIT TEST",
+                "JEST"
               ]}
               industry="E-Commerce"
             />

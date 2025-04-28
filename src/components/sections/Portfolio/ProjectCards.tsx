@@ -2,7 +2,7 @@ import ProjectCard from "@/components/sections/Portfolio/ProjectCard";
 
 export default function ProjectCards() {
   return (
-    <div className="projects-wrapper grid gap-4 [grid-template-columns:repeat(auto-fit,_minmax(300px,_1fr))] sm:pb-0 pb-10">
+    <div className="projects-wrapper grid gap-x-8 gap-y-10 [grid-template-columns:repeat(auto-fit,_minmax(300px,_1fr))] sm:pb-0 pb-10">
       <ProjectCard
         companyName="Adfin"
         subtitle="FinTech • Web Platform"
