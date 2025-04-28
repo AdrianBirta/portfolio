@@ -31,12 +31,12 @@ export default function HeadIntroSection({
         headTitle={true}
       />
       {address && (
-        <div className="address flex xl:text-2xl text-sm">
-          <div className="location flex items-center mr-2">
+        <div className="address flex xl:text-2xl text-sm sm:flex-row flex-col">
+          <div className="location flex items-center mr-2 sm:mb-0 mb-2 justify-center">
             <Building06 className="w-5 h-5 mr-2" />
             Oradea, Romania
           </div>
-          ⋅
+          <span className="sm:inline hidden">⋅</span>
           <a
             href="mailto:adrian.birta.dev@gmail.com"
             className="text-highlight flex items-center ml-2"

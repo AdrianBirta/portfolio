@@ -14,11 +14,10 @@ export default function SlideTestimonial({
   role: string;
   linkedin: string;
   company: string;
-}
-) {
+}) {
   return (
     <div className="testimonial-card h-120">
-      <div className="qoute-test text-xs el-highlight p-4 rounded-2xl mb-8 relative xl: h-35 lg:h-48 md:h-52 ms:h-54">
+      <div className="qoute-test text-xs el-highlight p-4 rounded-2xl mb-8 relative xl:h-35 lg:h-48 md:h-52 min-h-38">
         <span className="text-5xl text-highlight font-extrabold align-bottom leading-0 mr-2">"</span>
         <p className="inline">{text}</p>
         <span className="text-5xl text-highlight font-extrabold align-bottom leading-0 ml-2">"</span>

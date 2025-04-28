@@ -15,7 +15,7 @@ const Slides = [
 
   <SwiperSlide>
     <SlideTestimonial
-      text={"Adrian Birta is an excellent communicator, analytical and a team player. He is an asset to any technical team and capable of taking the lead to shape a product and process. I highly recommend Adrian Birta, he will be a valuable asset to any company. Please do not hesitate to contact me if needed to discuss my recommendation."}
+      text={"Adrian Birta is an excellent communicator, analytical and a team player. He is an asset to any technical team and capable of taking the lead to shape a product and process. I highly recommend Adrian Birta, he will be a valuable asset to any company."}
       picture={"person-2"}
       name={"Giridhar S R"}
       role={"Project Manager"}
@@ -26,7 +26,7 @@ const Slides = [
 
   <SwiperSlide>
     <SlideTestimonial
-      text={"Adrian showcased exceptional technical proficiency in ReactJS and demonstrated a remarkable ability to adapt to various challenges. His problem-solving skills and innovative approach significantly impacted the successful delivery of our projects. Adrian's commitment to delivering high-quality code and solutions is commendable."}
+      text={"Adrian showcased exceptional technical proficiency in ReactJS and demonstrated a remarkable ability to adapt to various challenges. His problem-solving skills and innovative approach significantly impacted the successful delivery of our projects."}
       picture={"person-3"}
       name={"Alexa Alexandru"}
       role={"Senior Software Developer"}

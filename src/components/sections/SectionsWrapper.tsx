@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 // Lazy load sections with optional loading fallback
@@ -99,12 +100,23 @@ export default function SectionsWrapper() {
   return (
     <>
       {!mounted ? (
-        <div className="fixed top-0 bottom-0 right-0 left-0 bg-black flex items-center justify-center z-50 opacity-90 animate-fadeIn">
-          <div className="flex flex-col items-center text-white">
+        <div className="fixed top-0 bottom-0 right-0 left-0 bg-black flex items-center justify-center z-50">
+          <div className="flex flex-col items-center text-white sm:gap-4 gap-2">
             <div className="spinner-border animate-spin mb-4" role="status">
               <span className="sr-only">Loading...</span>
             </div>
-            <span className="text-xl">Please Wait...</span>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-4 mb-2">
+                <Image
+                  src={`/images/iconM24.webp`}
+                  alt="Logo monitor"
+                  width={24} // You can adjust this based on actual image size
+                  height={24}
+                />
+                <span className="text-xl font-semibold">Portfolio Loading...</span>
+              </div>
+              <p className="text-sm">Adrian Birta (Senior Frontend Developer)</p>
+            </div>
           </div>
         </div>
       ) : (
