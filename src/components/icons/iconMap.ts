@@ -30,6 +30,7 @@ import VuetifyIcon from "@/components/icons/skills/VuetifyIcon"
 import CypressIcon from "@/components/icons/skills/CypressIcon"
 import LinkedinIcon from "@/components/icons/skills/LinkedinIcon"
 import WhatsappIcon from "@/components/icons/skills/WhatsappIcon"
+import MatherialUIIcon from "@/components/icons/skills/MatherialUI"
 
 export const iconMap = {
   amazon: AmazonIcon,
@@ -51,6 +52,7 @@ export const iconMap = {
   jest: JestIcon,
   leaflet: LeafletIcon,
   mapbox: MapboxIcon,
+  matherialui: MatherialUIIcon,
   mongodb: MongodbIcon,
   mysql: MysqlIcon,
   nextjs: NextjsIcon,
