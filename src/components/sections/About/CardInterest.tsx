@@ -20,7 +20,7 @@ export default function CardInterest({
     : descriptionLink?.whatsapp
       ? "https://wa.me/+40771322909"
       : descriptionLink?.linkedin
-        ? "https://www.linkedin.com/in/adrianbirta-react-front-end-developer"
+        ? "https://www.linkedin.com/in/adrianbirta"
         : descriptionLink?.email
           ? "mailto: adrian.birta.dev@gmail.com"
           : ""

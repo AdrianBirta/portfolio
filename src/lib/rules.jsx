@@ -20,7 +20,7 @@ export const MessageFormSchema = z.object({
 
   message: z
     .string()
-    .min(1, { message: "Content field is required." })
-    .max(1000, { message: "Title can't be more than 1000 characters." })
+    .min(1, { message: "Message field is required." })
+    .max(1000, { message: "Message can't be more than 1000 characters." })
     .trim(),
 })
