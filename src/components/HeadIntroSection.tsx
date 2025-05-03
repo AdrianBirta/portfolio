@@ -34,7 +34,7 @@ export default function HeadIntroSection({
         <div className="address flex xl:text-2xl text-sm sm:flex-row flex-col">
           <div className="location flex items-center mr-2 sm:mb-0 mb-2 justify-center">
             <Building06 className="w-5 h-5 mr-2" />
-            European Union
+            EU Citizen
           </div>
           <span className="sm:inline hidden">⋅</span>
           <a
