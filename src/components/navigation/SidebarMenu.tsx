@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import NavLink from "@/components/navigation/NavLink";
-import { Briefcase02, Clock, FolderCheck, GraduationHat02, Image04, Mail01, Tool02, User03 } from "@untitled-ui/icons-react";
+import { Briefcase02, Clock, FolderCheck, GraduationHat02, Image04, Send01, Tool02, User03 } from "@untitled-ui/icons-react";
 
 export type ChapterKey = keyof typeof sectionsTop;
 
@@ -72,7 +72,7 @@ export default function SidebarMenu({
         case "Portfolio":
           return <FolderCheck className="w-5 h-5 mr-2" />;
         case "Contact":
-          return <Mail01 className="w-5 h-5 mb-0.5" />;
+          return <Send01 className="w-5 h-5 mb-0.5" />;
         case "History":
           return <Clock className="w-5 h-5 mb-0.5" />;
         case "Showcase":

@@ -5,7 +5,7 @@ import SectionBlock from "@/components/SectionBlock";
 import CardInterest from "@/components/sections/About/CardInterest";
 import FormContact from "@/components/sections/Contact/FormContact";
 import TitleSection from "@/components/TitleSection";
-import { Phone } from "@untitled-ui/icons-react";
+import { Mail01, Phone } from "@untitled-ui/icons-react";
 
 export default function Contact({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
   return (
@@ -44,13 +44,13 @@ export default function Contact({ className, onTransitionEnd }: { className: str
             descriptionLink={{ whatsapp: true }}
           />
           <CardInterest
-            icon={<Phone className="w-10 h-10" />}
+            icon={<Mail01 className="w-10 h-10" />}
             name={"E-mail"}
             description={"adrian.birta.dev@gmail.com"}
             descriptionLink={{ email: true }}
           />
           <CardInterest
-            icon={<Phone className="w-10 h-10" />}
+            icon={<Icon name="linkedin" className="w-10 h-10 p-1" />}
             name={"LinkedIn"}
             description={"@adrianbirta"}
             descriptionLink={{ linkedin: true }}

@@ -2,7 +2,7 @@
 
 import { useActionState } from "react"
 
-import { Check, Edit05, Feather, Loading01, Mail02, Mail03 } from "@untitled-ui/icons-react"
+import { Check, Edit04, Feather, Loading01, Mail01, Send01 } from "@untitled-ui/icons-react"
 import { MessageFormState, sendMessage } from "@/lib/sendMessageHandle"
 import { useFieldError } from "@/lib/useFieldError"
 import clsx from "clsx"
@@ -51,7 +51,7 @@ export default function FormContact() {
         <div className="details-fields lg:w-[50%] w-[100%]">
           <div className="form-field rounded-xl transition-colors">
             <label htmlFor="name" className="flex items-center p-4">
-              <Mail03 className="w-5 h-5 " />
+              <Feather className="w-5 h-5 " />
             </label>
             <input
               type="text"
@@ -72,7 +72,7 @@ export default function FormContact() {
 
           <div className="form-field rounded-xl transition-colorsl">
             <label htmlFor="email" className="flex items-center p-4">
-              <Feather className="w-5 h-5" />
+              <Mail01 className="w-5 h-5" />
             </label>
             <input
               type="email"
@@ -93,7 +93,7 @@ export default function FormContact() {
 
           <div className="form-field rounded-xl transition-colors">
             <label htmlFor="subject" className="flex items-center p-4">
-              <Edit05 className="w-5 h-5" />
+              <Edit04 className="w-5 h-5" />
             </label>
             <input
               type="text"
@@ -145,7 +145,7 @@ export default function FormContact() {
             </p>
           ) : (
             <p className="flex items-center lg:text-xl text-base justify-evenly">
-              <Mail02 className="w-5 h-5" />
+              <Send01 className="w-5 h-5" />
               <span>Send Message</span>
             </p>
           )}
