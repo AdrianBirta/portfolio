@@ -1,10 +1,16 @@
+import clsx from "clsx"
+
 export default function SectionBlock({
-  children
+  children,
+  className
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  className?: string
 }) {
   return (
-    <section className="pt-16">
+    <section className={clsx(
+      className ? className : "pt-16"
+    )}>
       {children}
     </section>
   )

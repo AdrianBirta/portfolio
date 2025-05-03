@@ -159,7 +159,9 @@ body {
   flex: 1;
   overflow-y: auto;
   position: relative;
+  z-index: 50;
   direction: rtl;
+  overflow: visible;
 }
 
 .sidebar-scroll-container * {
@@ -600,5 +602,26 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   #about section .swiper {
     padding-bottom: 0;
     ;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sidebar .sidebar-header>span>div {
+    margin: 0;
+  }
+
+  .sidebar .sidebar-header>span>p {
+    font-weight: 400;
+  }
+
+  .sidebar .sidebar-header>div {
+    display: none;
   }
 }
