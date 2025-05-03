@@ -9,12 +9,12 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
           headBlock={{
             titleHigh: "Senior React Frontend",
             title: "Developer",
-            location: "Adfin Financial Services",
+            location: "Adfin (UK-based SaaS Platform)",
             date: "Nov 2024 ➔ Present"
           }}
 
           listBlock={{
-            intro1: "Joined the development team of a UK-based SaaS platform aimed at streamlining invoicing and billing workflows for small to mid-sized businesses. The platform faced major usability and integration challenges — including unclear invoice statuses, rigid customer contact management, and poor API performance with Xero.",
+            intro1: "Led frontend development to improve usability, API performance, and user experience for a SaaS invoicing platform.",
             focus: "Key Engineering Contributions:",
             items: [
               {
@@ -53,12 +53,12 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
           headBlock={{
             titleHigh: "Senior React Frontend",
             title: "Developer",
-            location: "Persistent Systems",
+            location: "Persistent Systems (USA-based)",
             date: "Dec 2022 ➔ Nov 2024"
           }}
 
           listBlock={{
-            intro1: "Partnered with a US-based geospatial intelligence company to design and deliver a robust, extensible mapping platform for advanced location-based data visualization and analytics. Focused on real-time interactivity, spatial accuracy, and performance-critical rendering.",
+            intro1: "Developed mapping solutions to enhance data visualization and user engagement for geospatial analytics.",
             focus: "Key Engineering Contributions:",
             items: [
               {
@@ -105,12 +105,12 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               headBlock={{
                 titleHigh: "Software",
                 title: "Developer",
-                location: "Amdaris",
+                location: "Amdaris (UK-based Client)",
                 date: "Jul 2021 ➔ Dec 2022"
               }}
 
               listBlock={{
-                intro1: "Worked with a UK-based client to architect and implement a new business function within their web portal. With minimal design documentation, the project required a deep understanding of business rules, technical adaptability, and clean integration with an existing multi-framework codebase.",
+                intro1: "Architected a modular, accessible UI for an enterprise web portal with minimal design documentation.",
                 focus: "Key Engineering Contributions:",
                 items: [
                   {
@@ -159,7 +159,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               }}
 
               listBlock={{
-                intro1: "Brought in to modernize the frontend of a healthcare platform offering physical therapy services. The original system suffered from sluggish performance, rendering errors, and poor mobile responsiveness — all of which were limiting user engagement and slowing business growth.",
+                intro1: "Modernized a healthcare platform to improve performance, responsiveness, and data visualization.",
                 focus: "Key Engineering Contributions:",
                 items: [
                   {
@@ -206,7 +206,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               }}
 
               listBlock={{
-                intro1: "Joined a cross-functional team to support the relaunch of a Switzerland-based online shoe retailer's e-commerce platform. The client faced tight deadlines and lacked the technical depth to migrate and scale their online store effectively. My role focused on architecting performant frontend components, integrating backend features, and ensuring smooth delivery across multiple platforms.",
+                intro1: "Led migration from legacy PHP to a modern React frontend, optimizing performance and scalability.",
                 focus: "Key Engineering Contributions:",
                 items: [
                   {
