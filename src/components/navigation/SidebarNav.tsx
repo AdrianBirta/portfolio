@@ -1,5 +1,5 @@
 import NavLink from "@/components/navigation/NavLink";
-import { Briefcase02, FolderCheck, GraduationHat02, Send01, Tool02, User03 } from "@untitled-ui/icons-react";
+import { Briefcase02, FolderCheck, GraduationHat02, PresentationChart01, Send01, Tool02, User03 } from "@untitled-ui/icons-react";
 
 export default function SidebarNav({
   className,
@@ -33,6 +33,9 @@ export default function SidebarNav({
           </li>
           <li>
             <NavLink href="contact" section="Contact" Icon={<Send01 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
+          </li>
+          <li className="hidden">
+            <NavLink href="micro-projects" section="Micro Projects" Icon={<PresentationChart01 className="w-5 h-5" />} isCollapsed={isCollapsed} currentHash={currentHash} setCurrentHash={setCurrentHash} />
           </li>
         </ul>
       </nav>

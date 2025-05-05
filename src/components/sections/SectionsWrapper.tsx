@@ -29,6 +29,10 @@ const Skills = dynamic(() => import("@/components/sections/Skills/Skills"), {
   loading: () => <SectionLoading name="Skills" />,
   ssr: false,
 });
+const MicroProjects = dynamic(() => import("@/components/sections/MicroProjects/MicroProjects"), {
+  loading: () => <SectionLoading name="Micro Projects" />,
+  ssr: false,
+});
 
 // Loading fallback component
 function SectionLoading({ name }: { name: string }) {
@@ -54,6 +58,7 @@ export default function SectionsWrapper() {
     experience: false,
     portfolio: false,
     skills: false,
+    ['micro-projects']: false,
   });
 
   // Simulated delay before mount (can be removed or tuned)
@@ -156,6 +161,12 @@ export default function SectionsWrapper() {
               <Skills
                 className="hashSection sm:rounded-xl rounded-sm p-6 pb-10 active"
                 onTransitionEnd={() => handleTransitionEnd("skills")}
+              />
+            )}
+            {isVisible["micro-projects"] && currentHash === "micro-projects" && (
+              <MicroProjects
+                className="hashSection sm:rounded-xl rounded-sm p-6 pb-10 active"
+                onTransitionEnd={() => handleTransitionEnd("microProjects")}
               />
             )}
           </div>

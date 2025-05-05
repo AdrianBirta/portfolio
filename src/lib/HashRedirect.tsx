@@ -10,7 +10,8 @@ export default function HashRedirect() {
       '#education',
       '#experience',
       '#portfolio',
-      '#skills'
+      '#skills',
+      '#micro-projects'
     ]; // Add all valid hashes here
 
     const handleHashChange = () => {
