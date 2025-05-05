@@ -134,6 +134,7 @@ export default function FormContact() {
 
       <div className="action-fileds text-center pt-6">
         <button
+          aria-label="Submit"
           type="submit"
           disabled={isPending}
           className="form-button-submit rounded-xl w-[200px] lg:py-2 py-1 lg:px-3.5 px-2"

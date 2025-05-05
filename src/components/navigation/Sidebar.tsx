@@ -100,6 +100,7 @@ export default function Sidebar() {
 
         <button
           onClick={toggleTheme}
+          aria-label="Change Theme"
           className="sm:hidden block hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link absolute right-0 top-0"
         >
           {theme === "light" ? <Moon01 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
@@ -163,6 +164,7 @@ export default function Sidebar() {
           )}>
             <button
               onClick={toggleTheme}
+              aria-label="Change Theme"
               className="hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
             >
               {theme === "light" ? <Moon01 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
@@ -181,6 +183,7 @@ export default function Sidebar() {
           )}>
             <button
               onClick={() => setShowCursorShadow(prev => !prev)}
+              aria-label="Change Cursor Style"
               className="hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
             >
               {showCursorShadow ? <ArrowNarrowUpLeft className="w-5 h-5" /> : <ArrowCircleBrokenUpLeft className="w-5 h-5" />}
@@ -195,6 +198,7 @@ export default function Sidebar() {
 
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
+          aria-label="Colapse Sidebar"
           className="absolute -top-1 -right-2.5 z-10 hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link lg:block md:hidden sm:hidden hidden"
         >
           {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}

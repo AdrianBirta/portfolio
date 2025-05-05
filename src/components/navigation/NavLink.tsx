@@ -50,6 +50,7 @@ export default function NavLink({
   return (
     <a
       href={`#${href}`}
+      aria-label={`Link to ${href}`}
       className={clsx(
         menuLink
           ? menuLinkTop
@@ -57,12 +58,8 @@ export default function NavLink({
             : "w-1/4 h-full flex flex-col items-center justify-center text-sm"
           : "flex items-center gap-2 px-10 py-4 transition-colors duration-300 link sm:w-full",
         currentHash === href
-          ? theme === "light"
-            ? `bg-blue-100 text-highlight ${menuLink ? "border-t-3" : "border-r-4"} border-highlight`
-            : `bg-gray-700 text-highlight ${menuLink ? "border-t-3" : "border-r-4"} border-highlight`
-          : theme === "light"
-            ? `text-gray-800 ${menuLink && "border-t-3 border-color-bg-highlight"} hover:text-highlight`
-            : `text-white ${menuLink && "border-t-3 border-color-bg-highlight"} hover:text-highlight`,
+          ? `bg-light-highlight text-highlight ${menuLink ? "border-t-3" : "border-r-4"} border-highlight`
+          : `${menuLink && "border-t-3 border-color-bg-highlight"} hover:text-highlight`
       )}
 
       onClick={() => (
