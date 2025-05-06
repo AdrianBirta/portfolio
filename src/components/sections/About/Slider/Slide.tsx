@@ -31,7 +31,7 @@ export default function SlideTestimonial({
           alt="avatar"
           className="rounded-full mb-2"
         />
-        <a href={linkedin} target="_blank" className="name text-xl text-highlight">{name}</a>
+        <a href={linkedin} target="_blank" className="name text-xl text-highlight link">{name}</a>
         <div className="title text-xs text-gray-400">{role} at <span className="font-bold">{company}</span></div>
       </div>
     </div>

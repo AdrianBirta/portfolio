@@ -138,7 +138,7 @@ export default function FormContact() {
           aria-label="Submit"
           type="submit"
           disabled={isPending}
-          className="form-button-submit rounded-xl w-[200px] lg:py-2 py-1 lg:px-3.5 px-2"
+          className="form-button-submit rounded-xl w-[200px] lg:py-2 py-1 lg:px-3.5 px-2 link"
         >
           {isPending ? (
             <p className="flex items-center lg:text-xl text-base justify-evenly">

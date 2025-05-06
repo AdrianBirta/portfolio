@@ -36,10 +36,10 @@ export default function ProjectCard({
         />
       </div>
       <div className="links flex gap-2">
-        <a href={websiteURL} aria-label={`Visit ${websiteURL} website`} title="Visit website" className="website p-1 badge-bg-highlight rounded-full flex items-center justify-center">
+        <a href={websiteURL} aria-label={`Visit ${websiteURL} website`} title="Visit website" className="website p-1 badge-bg-highlight link rounded-full flex items-center justify-center">
           <Globe02 className="w-9 h-8" aria-hidden="true" />
         </a>
-        <a href={linkedinURL} aria-label={`Visit ${linkedinURL} LinkedIn`} title="Visit LinkedIn" className="linkedin p-1 badge-bg-highlight rounded-full flex items-center justify-center">
+        <a href={linkedinURL} aria-label={`Visit ${linkedinURL} LinkedIn`} title="Visit LinkedIn" className="linkedin p-1 badge-bg-highlight link rounded-full flex items-center justify-center">
           <Icon name="linkedin" className="w-8 h-5" aria-hidden="true" />
         </a>
       </div>

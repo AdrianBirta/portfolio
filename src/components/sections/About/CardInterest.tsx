@@ -34,7 +34,7 @@ export default function CardInterest({
           !descriptionLink ? (
             <div className="interest-description xl:text-base text-xs text-gray-400">{description}</div>
           ) : (
-            <a className="text-highlight font-bold lg:text-base text-xs" href={href}>{description}</a>
+            <a className="text-highlight font-bold lg:text-base text-xs link" href={href}>{description}</a>
           )
         }
       </div>
