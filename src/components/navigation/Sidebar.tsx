@@ -10,85 +10,36 @@ import {
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getInitialTheme, applyTheme } from "@/lib/theme";
+import { enableCursorStyle, trackCursorMovement } from "@/lib/cursor";
 
 export default function Sidebar() {
-  const [currentHash, setCurrentHash] = useState<string>("");
-  const [theme, setTheme] = useState<string>("dark");
-  const [showCursorShadow, setShowCursorShadow] = useState<boolean>(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [showCursorStyle, setShowCursorStyle] = useState<boolean>(false);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [theme, setTheme] = useState("");
 
   useEffect(() => {
-    // Detect system preference or stored theme
-    const storedTheme = localStorage.getItem("theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-
-    const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
+    const initialTheme = getInitialTheme();
     setTheme(initialTheme);
-    document.documentElement.classList.toggle("light-theme", initialTheme === "light");
-
-    const updateHash = () => setCurrentHash(window.location.hash.replace("#", ""));
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-
-    return () => window.removeEventListener("hashchange", updateHash);
+    applyTheme(initialTheme);
   }, []);
 
   useEffect(() => {
-    const cursorShadow = document.querySelector(".cursor-shadow");
-
-    const handleLinkHover = () => {
-      if (cursorShadow) {
-        cursorShadow.classList.add("scale-up");
-      }
-    };
-
-    const handleLinkLeave = () => {
-      if (cursorShadow) {
-        cursorShadow.classList.remove("scale-up");
-      }
-    };
-
-    const links = document.querySelectorAll(".link");
-
-    showCursorShadow && (
-      links.forEach((link) => {
-        link.addEventListener("mouseenter", handleLinkHover);
-        link.addEventListener("mouseleave", handleLinkLeave);
-      })
-    )
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener("mouseenter", handleLinkHover);
-        link.removeEventListener("mouseleave", handleLinkLeave);
-      });
-    };
-  }, [showCursorShadow]);
-
-  /// Handle cursor shadow effect
-  useEffect(() => {
-    const cursor = document.getElementById("cursor-shadow");
-    const moveCursor = (e: MouseEvent) => {
-      if (cursor && showCursorShadow) {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-      }
-    };
-
-    if (showCursorShadow) {
-      window.addEventListener("mousemove", moveCursor);
-    } else {
-      window.removeEventListener("mousemove", moveCursor);
+    if (showCursorStyle) {
+      const cleanup = enableCursorStyle();
+      return cleanup;
     }
+  }, [showCursorStyle]);
 
-    return () => window.removeEventListener("mousemove", moveCursor);
-  }, [showCursorShadow]);
+  useEffect(() => {
+    const cleanup = trackCursorMovement(showCursorStyle);
+    return cleanup;
+  }, [showCursorStyle]);
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("light-theme", newTheme === "light");
+    applyTheme(newTheme);
   };
 
   return (
@@ -122,7 +73,7 @@ export default function Sidebar() {
             />
             <div className="status-dot-wrapper">
               <span className="w-4 h-4 bg-green-500 border-2 border-white rounded-full status-dot" />
-              {showCursorShadow && (
+              {showCursorStyle && (
                 <div className="tooltip">Available!</div>
               )}
             </div>
@@ -145,14 +96,10 @@ export default function Sidebar() {
 
         <SidebarNav
           isCollapsed={isCollapsed}
-          currentHash={currentHash}
-          setCurrentHash={setCurrentHash}
           className="sidebar-scroll-container hidden sm:block"
         />
 
         <SidebarMenu
-          currentHash={currentHash}
-          setCurrentHash={setCurrentHash}
           className="block sm:hidden"
         />
 
@@ -169,7 +116,7 @@ export default function Sidebar() {
             >
               {theme === "light" ? <Moon01 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
-            {showCursorShadow && (
+            {showCursorStyle && (
               <div className="tooltip">
                 {theme === "light" ? "Dark Mode" : "Light Mode"}
               </div>
@@ -182,13 +129,13 @@ export default function Sidebar() {
             isCollapsed ? "hidden" : "lg:flex md:hidden sm:hidden hidden"
           )}>
             <button
-              onClick={() => setShowCursorShadow(prev => !prev)}
+              onClick={() => setShowCursorStyle(prev => !prev)}
               aria-label="Change Cursor Style"
               className="hover:text-highlight hover:scale-110 transition-colors duration-300 cursor-pointer p-3 link"
             >
-              {showCursorShadow ? <ArrowNarrowUpLeft className="w-5 h-5" /> : <ArrowCircleBrokenUpLeft className="w-5 h-5" />}
+              {showCursorStyle ? <ArrowNarrowUpLeft className="w-5 h-5" /> : <ArrowCircleBrokenUpLeft className="w-5 h-5" />}
             </button>
-            {showCursorShadow && (
+            {showCursorStyle && (
               <div className="tooltip">
                 Magic cursor: on
               </div>
@@ -204,8 +151,8 @@ export default function Sidebar() {
           {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
       </div>
-      {/* Floating cursor shadow */}
-      <div id="cursor-shadow" className={`cursor-shadow ${showCursorShadow ? "" : "hidden"}`}></div>
+      {/* Floating cursor style */}
+      <div id="cursor-style" className={`cursor-style ${showCursorStyle ? "" : "hidden"}`}></div>
     </section>
   );
 }

@@ -3,9 +3,10 @@
 import { useActionState } from "react"
 
 import { Check, Edit04, Feather, Loading01, Mail01, Send01 } from "@untitled-ui/icons-react"
-import { MessageFormState, sendMessage } from "@/lib/sendMessageHandle"
-import { useFieldError } from "@/lib/useFieldError"
+import { sendMessage } from "@/lib/sendMessageHandle"
+import { useFieldError } from "@/hooks/useFieldError"
 import clsx from "clsx"
+import { MessageFormState } from "@/types"
 
 const initialState: MessageFormState = {
   errors: {},

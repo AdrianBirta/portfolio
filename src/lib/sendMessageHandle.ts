@@ -1,33 +1,6 @@
+import { MessageFormState } from "@/types";
 import { MessageFormSchema } from "./rules";
 import emailjs from "@emailjs/browser";
-
-export type FieldErrors = Partial<Record<"name" | "email" | "subject" | "message", string[]>>
-export type GlobalError = {
-  global: string[],
-}
-
-export type MessageFormState =
-  | {
-    errors: FieldErrors;
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
-  | {
-    errors: GlobalError;
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
-  | {
-    success: true;
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
 
 export const sendMessage = async (_: MessageFormState, formData: FormData): Promise<MessageFormState> => {
   const name = formData.get("name")?.toString() ?? "";

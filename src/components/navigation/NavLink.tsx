@@ -1,15 +1,14 @@
 "use client";
 
-import { ChapterKey } from "@/components/navigation/SidebarMenu";
+import { ChapterKey } from "@/types";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavLink({
   href,
   section,
   Icon,
-  currentHash,
-  setCurrentHash,
   isCollapsed,
   menuLink,
   menuLinkTop,
@@ -19,37 +18,17 @@ export default function NavLink({
   href: string | undefined;
   section: string;
   Icon: React.ReactNode;
-  currentHash: string;
-  setCurrentHash: (val: string) => void;
   isCollapsed?: boolean;
   menuLink?: boolean;
   menuLinkTop?: boolean;
   chapterLink?: ChapterKey | null;
   handleClick?: (val: ChapterKey | null | undefined) => void;
 }) {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const current = document.documentElement.classList.contains("light-theme")
-      ? "light"
-      : "dark";
-    setTheme(current);
-
-    const observer = new MutationObserver(() => {
-      const updatedTheme = document.documentElement.classList.contains("light-theme")
-        ? "light"
-        : "dark";
-      setTheme(updatedTheme);
-    });
-
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    return () => observer.disconnect();
-  }, []);
+  const pathname = usePathname().replace("/", "");
 
   return (
-    <a
-      href={`#${href}`}
+    <Link
+      href={`/${href}`}
       aria-label={`Link to ${href}`}
       className={clsx(
         menuLink
@@ -57,7 +36,7 @@ export default function NavLink({
             ? "w-1/2 h-full flex items-center justify-center text-sm"
             : "w-1/4 h-full flex flex-col items-center justify-center text-sm"
           : "flex items-center gap-2 px-10 py-4 transition-colors duration-300 link sm:w-full",
-        currentHash === href
+        pathname === href
           ? `bg-light-highlight text-highlight ${menuLink ? "border-t-3" : "border-r-4"} border-highlight`
           : `${menuLink && "border-t-3 border-color-bg-highlight"} hover:text-highlight`
       )}
@@ -71,6 +50,6 @@ export default function NavLink({
         ? <span>{section}</span>
         : !isCollapsed && <span className="lg:block md:hidden sm:hidden hidden">{section}</span>
       }
-    </a>
+    </Link>
   );
 }

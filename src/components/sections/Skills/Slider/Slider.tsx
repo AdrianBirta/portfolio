@@ -1,14 +1,12 @@
-"use client"
-
 import { Swiper } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Slides from "@/components/sections/Skills/Slider/Slides";
-import { useHashMatch } from "@/lib/useHashMatch";
+import { useRouteMatch } from "@/hooks/useRouteMatch";
 
 export default function Slider() {
-  const showSlider = useHashMatch("skills");
+  const showSlider = useRouteMatch("skills");
 
   return (
     <>

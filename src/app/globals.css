@@ -10,7 +10,7 @@
   --section-border: rgba(255, 255, 255, 0.1);
   --sidebar-profile-bg: #8966f5cd;
   --scrollbar-thumb: #8966f5;
-  --scrollbar-thumb-hover: #baa3ff;
+  --scrollbar-thumb-hover: #9678f0;
   --text-color: #ffffff;
   --text-color-placeholder: #9b9b9b70;
   --bg-image: url('/images/bg.png');
@@ -244,7 +244,7 @@ body {
 }
 
 /* === Cursor Shadow Effect === */
-.cursor-shadow {
+.cursor-style {
   pointer-events: none;
   position: fixed;
   width: 30px;
@@ -256,11 +256,11 @@ body {
   z-index: 9999;
 }
 
-.cursor-shadow.scale-up {
+.cursor-style.scale-up {
   transform: translate(-50%, -50%) scale(1.6);
 }
 
-.cursor-shadow.hidden {
+.cursor-style.hidden {
   display: none;
 }
 
@@ -449,6 +449,7 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   color: #fff;
   padding: 8px 14px;
   cursor: pointer;
+  transition: .5s ease background-color;
 }
 
 .form-button-submit:hover {

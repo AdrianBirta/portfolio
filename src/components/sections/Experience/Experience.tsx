@@ -5,7 +5,7 @@ import HeadIntroSection from "@/components/HeadIntroSection";
 import TimelineList from "@/components/sections/Experience/TimelineList";
 import { useCallback, useState } from "react";
 
-export default function Experience({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+export default function Experience({ className }: { className: string }) {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = useCallback(() => setScroll(true), [scroll])
@@ -14,7 +14,6 @@ export default function Experience({ className, onTransitionEnd }: { className: 
     <section
       id="experience"
       className={className}
-      onTransitionEnd={onTransitionEnd}
       onScrollEnd={() => !scroll && handleScroll()}
     >
       <CubeTopLeftHalf />

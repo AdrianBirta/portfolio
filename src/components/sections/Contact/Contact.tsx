@@ -7,9 +7,9 @@ import FormContact from "@/components/sections/Contact/FormContact";
 import TitleSection from "@/components/TitleSection";
 import { Mail01, Phone } from "@untitled-ui/icons-react";
 
-export default function Contact({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+export default function Contact({ className }: { className: string }) {
   return (
-    <section id="contact" className={className} onTransitionEnd={onTransitionEnd}>
+    <section id="contact" className={className} >
       <CubeTopLeftHalf />
 
       <HeadIntroSection

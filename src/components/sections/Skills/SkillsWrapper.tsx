@@ -1,7 +1,7 @@
 "use client"
 
 import Skill from "@/components/sections/Skills/Skill";
-import { SectionType } from "@/components/sections/Skills/Skills";
+import { SectionType } from "@/types";
 import { useEffect, useState } from "react";
 
 export default function SkillsWrapper({ skills, scroll }: { skills: SectionType[], scroll?: boolean }) {

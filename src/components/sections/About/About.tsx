@@ -7,7 +7,7 @@ import Interests from "@/components/sections/About/Interests";
 import Testimonails from "@/components/sections/About/Testimonials";
 import { useCallback, useState } from "react";
 
-export default function About({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+export default function About({ className }: { className: string }) {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = useCallback(() => setScroll(true), [scroll])
@@ -16,7 +16,6 @@ export default function About({ className, onTransitionEnd }: { className: strin
     <section
       id="about"
       className={className}
-      onTransitionEnd={onTransitionEnd}
       onScrollEnd={() => !scroll && handleScroll()}
     >
       <CubeTopLeftHalf />

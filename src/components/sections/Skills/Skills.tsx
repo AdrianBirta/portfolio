@@ -5,16 +5,10 @@ import HeadIntroSection from "@/components/HeadIntroSection";
 import SectionBlock from "@/components/SectionBlock";
 import TitleSection from "@/components/TitleSection";
 
-import { iconMap } from "@/components/icons/iconMap";
 import Slider from "@/components/sections/Skills/Slider/Slider";
 import SkillsWrapper from "@/components/sections/Skills/SkillsWrapper";
 import { useCallback, useState } from "react";
-
-export type SectionType = {
-  iconName: keyof typeof iconMap,
-  skillName: string,
-  years: string
-}
+import { SectionType } from "@/types";
 
 const skills: {
   frontend: SectionType[]
@@ -56,7 +50,7 @@ const skills: {
   ]
 };
 
-export default function Skills({ className, onTransitionEnd }: { className: string, onTransitionEnd: () => void }) {
+export default function Skills({ className }: { className: string }) {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = useCallback(() => setScroll(true), [scroll])
@@ -65,7 +59,6 @@ export default function Skills({ className, onTransitionEnd }: { className: stri
     <section
       id="skills"
       className={className}
-      onTransitionEnd={onTransitionEnd}
       onScrollEnd={() => !scroll && handleScroll()}
     >
       <CubeTopLeftHalf />

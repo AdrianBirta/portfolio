@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import HashRedirect from "@/lib/HashRedirect";
+import Sidebar from "@/components/navigation/Sidebar";
+import ClientWrapper from "@/components/ClientWrapper";
 
 export const metadata: Metadata = {
   title: "Portfolio - Adrian Birta",
@@ -17,9 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen m-0 p-0 min-h-80">
-        <HashRedirect />
         <main className="h-screen m-0 p-0 min-h-80">
-          {children}
+          <div className="portfolio-wrapper sm:flex-row flex-col sm:p-5 p-1">
+            <Sidebar />
+            <ClientWrapper>
+              {children}
+            </ClientWrapper>
+          </div>
         </main>
       </body>
     </html>
