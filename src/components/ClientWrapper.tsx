@@ -30,7 +30,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
                 />
                 <span className="text-xl font-semibold">Portfolio Loading...</span>
               </div>
-              <p className="text-sm">Adrian Birta (Senior Frontend Developer)</p>
+              <p className="text-sm">Adrian Birta (Senior Frontend Engineer)</p>
             </div>
           </div>
         </div>

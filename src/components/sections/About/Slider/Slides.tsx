@@ -29,7 +29,7 @@ const Slides = [
       text={"Adrian showcased exceptional technical proficiency in ReactJS and demonstrated a remarkable ability to adapt to various challenges. His problem-solving skills and innovative approach significantly impacted the successful delivery of our projects."}
       picture={"person-3"}
       name={"Alexa Alexandru"}
-      role={"Senior Software Developer"}
+      role={"Senior Software Engineer"}
       linkedin={"https://www.linkedin.com/in/alexa-alexandru-17a960172/"}
       company={"Amdaris"}
     />

@@ -90,7 +90,7 @@ export default function Sidebar() {
               />
               <p className="text-2xl">Adrian <span className="text-highlight">Birta</span></p>
             </div>
-            <p className="text-md font-bold text-gray-400">Senior Frontend Developer</p>
+            <p className="text-md font-bold text-gray-400">Senior Frontend Engineer</p>
           </span>
         </div>
 

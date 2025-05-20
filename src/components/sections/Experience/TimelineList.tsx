@@ -8,7 +8,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
         <TimelineItem
           headBlock={{
             titleHigh: "Senior React Frontend",
-            title: "Developer",
+            title: "Engineer",
             location: "Adfin (UK-based SaaS Platform)",
             date: "Nov 2024 ➔ Present"
           }}
@@ -52,7 +52,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
         <TimelineItem
           headBlock={{
             titleHigh: "Senior React Frontend",
-            title: "Developer",
+            title: "Engineer",
             location: "Persistent Systems (USA-based)",
             date: "Dec 2022 ➔ Nov 2024"
           }}
@@ -104,7 +104,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
             <TimelineItem
               headBlock={{
                 titleHigh: "Software",
-                title: "Developer",
+                title: "Engineer",
                 location: "Amdaris (UK-based Client)",
                 date: "Jul 2021 ➔ Dec 2022"
               }}
@@ -153,7 +153,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
             <TimelineItem
               headBlock={{
                 titleHigh: "React Frontend",
-                title: "Developer",
+                title: "Engineer",
                 location: "Improvemed",
                 date: "Oct 2020 ➔ Jul 2021"
               }}
