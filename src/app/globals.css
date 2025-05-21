@@ -660,6 +660,21 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   }
 
   .sidebar .sidebar-header>div {
-    display: none;
+    width: 40px;
+    right: 20px;
+  }
+
+  .sidebar .sidebar-header>div .profilePic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border: 1px solid var(--scrollbar-thumb-hover);
+  }
+
+  .sidebar .sidebar-header>div .status-dot-wrapper {
+    bottom: 8px;
+    right: 8px;
+    transform: scale(0.5);
   }
 }
