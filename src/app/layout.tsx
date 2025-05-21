@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Sidebar from "@/components/navigation/Sidebar";
 import ClientWrapper from "@/components/ClientWrapper";
+import ScrollReset from "@/components/ScrollReset";
 
 export const metadata: Metadata = {
   title: "Portfolio - Adrian Birta",
@@ -23,6 +24,7 @@ export default function RootLayout({
             <Sidebar />
             <ClientWrapper>
               {children}
+              <ScrollReset />
             </ClientWrapper>
           </div>
         </main>
