@@ -225,17 +225,19 @@ body {
   overflow-y: auto;
 }
 
+.hashSection {
+  outline: none;
+}
+
+.hashSection:focus-visible {
+  outline: none;
+}
+
 /* Section States */
 .hashSection.active {
   animation: flyIn 1s ease forwards;
   animation-delay: 0.3s;
   z-index: 3;
-}
-
-.hashSection.previous {
-  background-color: red;
-  animation: zoomOut 1s ease forwards;
-  z-index: 1;
 }
 
 /* Nav Link Style */
