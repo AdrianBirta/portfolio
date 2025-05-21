@@ -23,9 +23,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // images: {
-  //   domains: ['res.cloudinary.com'],
-  // },
+  experimental: {
+    scrollRestoration: false
+  }
 };
 
 export default nextConfig;
