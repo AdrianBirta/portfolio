@@ -11,14 +11,26 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
     return () => clearTimeout(timeout);
   }, []);
 
+  const circleSpans = Array.from({ length: 21 }).map((_, i) => (
+    <span key={i} style={{ '--i': String(i) } as React.CSSProperties}></span>
+  ));
+
+
   return (
     <>
       {!mounted ? (
         <div className="fixed top-0 bottom-0 right-0 left-0 bg-black flex items-center justify-center z-50">
           <div className="flex flex-col items-center text-white sm:gap-4 gap-2">
-            <div className="spinner-border snipper-border-refresh animate-spin mb-4" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
+            <section className="section-container">
+              <div className="container">
+                <div className="circle">
+                  {circleSpans}
+                </div>
+                <div className="circle">
+                  {circleSpans}
+                </div>
+              </div>
+            </section>
             <div className="text-center">
               <div className="flex items-center justify-center gap-4 mb-2">
                 <Image
