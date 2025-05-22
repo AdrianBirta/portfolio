@@ -60,7 +60,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
               <TimelineItem
                 headBlock={{ titleHigh: "High School", title: "- Informatics & Mathematics", location: "High School (Informatic - mathematic, intensive informatic profile) - Oradea", date: "Sep 2009 ➔ Jun 2013" }}
                 listBlock={{
-                  intro1: "Earned a Bachelor's degree in Automation and Applied Informatics with a strong foundation in computer science, software development, and control systems.",
+                  intro1: "Completed high school with a focus on mathematics and computer science, including intensive informatics courses. Developed foundational programming and problem-solving skills early on.",
                   focus: "Focus Areas:",
                   items: [
                     { text: "Informatics (C++, pseudocode, logic design)." },
