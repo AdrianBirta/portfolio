@@ -40,7 +40,7 @@ export default function NavLink({
           ? `bg-light-highlight text-highlight ${menuLink ? "border-t-3" : "border-r-4"} border-highlight`
           : `${menuLink && "border-t-3 border-color-bg-highlight"} hover:text-highlight`
       )}
-
+      scroll={false}
       onClick={() => (
         menuLink && handleClick && handleClick(chapterLink)
       )}
