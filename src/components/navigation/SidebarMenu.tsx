@@ -56,33 +56,35 @@ export default function SidebarMenu({
   }, [pathname]);
 
   return (
-    <div className={className}>
-      {selectedChapter && (
-        <nav className="top-menu h-12">
-          <ul className="footer-menu-list w-full h-full flex items-center">
-            {sectionsTop[selectedChapter].map((section) => {
-              return (
-                <NavLink
-                  key={section.name}
-                  href={section.href}
-                  section={section.name}
-                  Icon={
-                    getNavIcon(
-                      section.name,
-                      section.name === "Education" ||
-                        section.name === "Experience" ||
-                        section.name === "Skills" ||
-                        section.name === "Portfolio" ? "mr-2" : ""
-                    )
-                  }
-                  menuLink={true}
-                  menuLinkTop={true}
-                />
-              );
-            })}
-          </ul>
-        </nav>
-      )}
+    <div
+      className={`${className} overflow-hidden transition-all duration-300 ease-in-out ${selectedChapter ? "h-12 opacity-100" : "h-0"
+        }`}
+    >
+      <nav className="top-menu h-12">
+        <ul className="footer-menu-list w-full h-full flex items-center">
+          {selectedChapter &&
+            sectionsTop[selectedChapter].map((section) => (
+              <NavLink
+                key={section.name}
+                href={section.href}
+                section={section.name}
+                Icon={
+                  getNavIcon(
+                    section.name,
+                    section.name === "Education" ||
+                      section.name === "Experience" ||
+                      section.name === "Skills" ||
+                      section.name === "Portfolio"
+                      ? "mr-2"
+                      : ""
+                  )
+                }
+                menuLink={true}
+                menuLinkTop={true}
+              />
+            ))}
+        </ul>
+      </nav>
 
       <nav className="footer-menu fixed bottom-0 left-0 right-0 h-15 z-20 bg-sidebar">
         <ul className="footer-menu-list w-full h-full flex items-center">
@@ -103,7 +105,9 @@ export default function SidebarMenu({
                   chapter.name === "Home" ||
                     chapter.name === "Contact" ||
                     chapter.name === "History" ||
-                    chapter.name === "Showcase" ? "mb-0.5" : ""
+                    chapter.name === "Showcase"
+                    ? "mb-0.5"
+                    : ""
                 )
               }
               menuLink={true}
