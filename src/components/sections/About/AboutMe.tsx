@@ -13,7 +13,6 @@ export default function AboutMe() {
           alt="Logo monitor"
           width={256} // You can adjust this based on actual image size
           height={256}
-          sizes="(max-width: 1024px) 160px, (max-width: 1280px) 208px, 256px"
         />
         <p className="xl:text-base text-xs">
           Strategic and impact-driven Senior Frontend Engineer with <span className="text-highlight">5 years</span> of experience architecting

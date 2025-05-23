@@ -728,10 +728,21 @@ ul.timeline-list .timeline-item .circle-avatar.start {
   }
 }
 
+
+@media screen and (max-width: 1024px) {
+  #about .content>img {
+    width: 208px;
+  }
+}
+
 @media screen and (max-width: 640px) {
   #about section .swiper {
     padding-bottom: 0;
     ;
+  }
+
+  #about .content>img {
+    width: 160px;
   }
 }
 
