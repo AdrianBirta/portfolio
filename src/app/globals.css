@@ -761,7 +761,8 @@ ul.timeline-list .timeline-item .circle-avatar.start {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    border: 1px solid var(--scrollbar-thumb-hover);
+    border: 1px solid var(--highlight-bg-color);
+    box-shadow: 0px 0px 12px 2px var(--scrollbar-thumb);
   }
 
   .sidebar .sidebar-header>div .status-dot-wrapper {
