@@ -27,7 +27,7 @@ export default function Slider() {
         disableOnInteraction: false,
 
       }}
-      loop={true}
+      loop={Slides.length < 3}
       speed={1000}
       spaceBetween={30}
       slidesPerView={2}
