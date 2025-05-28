@@ -25,9 +25,8 @@ export default function Slider() {
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
-
       }}
-      loop={Slides.length < 4}
+      loop={true}
       speed={1000}
       spaceBetween={30}
       slidesPerView={2}
