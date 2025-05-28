@@ -34,6 +34,17 @@ const Slides = [
       company={"Amdaris"}
     />
   </SwiperSlide>,
+
+  <SwiperSlide>
+    <SlideTestimonial
+      text={"I really enjoyed working with Adrian on a challenging React and MapBox complex project. His frontend expertise was invaluable - especially when it came to geospatial data visualization and performance optimization. He has a knack for turning complex technical challenges into clean, user-friendly solutions."}
+      picture={"person-4"}
+      name={"Antonia Carmazan"}
+      role={"Senior React Developer"}
+      linkedin={"https://www.linkedin.com/in/antonia-carmazan-18b693162/"}
+      company={"Modu"}
+    />
+  </SwiperSlide>,
 ]
 
 export default Slides;
