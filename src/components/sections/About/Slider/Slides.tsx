@@ -45,6 +45,17 @@ const Slides = [
       company={"Modu"}
     />
   </SwiperSlide>,
+
+  <SwiperSlide>
+    <SlideTestimonial
+      text={"What I appreciate about Adrian is his proactive attitude. He doesn’t just tick boxes, he thinks about the bigger picture, how users interact with the product, and how to make things better for the long term. He’s collaborative, easy to communicate with, and always brings a positive, professional approach."}
+      picture={"person-5"}
+      name={"Krishnakant Kumar"}
+      role={"Global Recruitment Lead"}
+      linkedin={"https://www.linkedin.com/in/therecruitersradar/"}
+      company={"Axiom Software Solutions"}
+    />
+  </SwiperSlide>,
 ]
 
 export default Slides;
