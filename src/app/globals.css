@@ -46,6 +46,28 @@
   --badge-highlight-bg-color: #f6f6f6;
 }
 
+.efermier-light-theme {
+  --bg-color: #f7f7f7;
+  --sidebar-bg: #f7f7f7f0;
+  --section-bg: #f0f4f3;
+  --section-border: rgba(0, 121, 107, 0.12);
+  --sidebar-profile-bg: #c8e5e0;
+  --scrollbar-thumb: #00796B;
+  --scrollbar-thumb-hover: #00a38f;
+  --text-color: #263238;
+  --text-color-placeholder: #5c6b68;
+  --bg-image: url('/images/bg-efermier-light.png');
+  /* recomand să faci o variantă light */
+  --bg-shadow-cursor: rgba(0, 121, 107, 0.18);
+  --highlight-color: #00796B;
+  --highlight-text-color: #263238;
+  --highlight-bg-color: #e6f0ed;
+  --circle-size: 70px;
+  --line-width: 4px;
+  --line-color: var(--highlight-bg-color);
+  --badge-highlight-bg-color: #f0f4f3;
+}
+
 /* ===== BASE GLOBAL STYLES ===== */
 
 .text-highlight {

@@ -2,7 +2,7 @@ import { iconMap } from "@/components/icons/iconMap";
 
 export type ChapterKey = "history" | "showcase";
 
-export type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | "efermier-light";
 
 export type SectionType = {
   iconName: keyof typeof iconMap,
