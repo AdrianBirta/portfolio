@@ -1,3 +1,4 @@
+// src\components\icons\Icon.tsx
 import { iconMap } from "@/components/icons/iconMap";
 
 type IconName = keyof typeof iconMap;

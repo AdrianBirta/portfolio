@@ -1,3 +1,5 @@
+// src\components\icons\iconMap.ts
+
 import AmazonIcon from "@/components/icons/skills/AmazonwebservicesIcon"
 import ArcgisIcon from "@/components/icons/skills/ArcgisIcon"
 import BootstrapIcon from "@/components/icons/skills/BootstrapIcon"
@@ -31,6 +33,10 @@ import CypressIcon from "@/components/icons/skills/CypressIcon"
 import LinkedinIcon from "@/components/icons/skills/LinkedinIcon"
 import WhatsappIcon from "@/components/icons/skills/WhatsappIcon"
 import MatherialUIIcon from "@/components/icons/skills/MatherialUI"
+import eFermierLogoIcon from "@/components/icons/eFermierLogoIcon"
+import AdfinLogoIcon from "@/components/icons/AdfinLogoIcon"
+import AmdarisLogoIcon from "@/components/icons/AmdarisLogoIcon"
+import PersistenLogoIcon from "@/components/icons/PersistentLogoIcon"
 
 export const iconMap = {
   amazon: AmazonIcon,
@@ -66,4 +72,8 @@ export const iconMap = {
   vuejs: VuejsIcon,
   vuetify: VuetifyIcon,
   whatsapp: WhatsappIcon,
+  efermierLogo: eFermierLogoIcon,
+  adfinLogo: AdfinLogoIcon,
+  amdarisLogo: AmdarisLogoIcon,
+  persistentLogo: PersistenLogoIcon,
 }

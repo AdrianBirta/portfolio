@@ -1,3 +1,5 @@
+// src\components\icons\skills\BootstrapIcon.tsx
+
 type IconProps = {
   size?: number | string;
   color?: string;

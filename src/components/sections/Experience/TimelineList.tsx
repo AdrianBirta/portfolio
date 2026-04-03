@@ -7,10 +7,55 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
       <ul className="timeline-list">
         <TimelineItem
           headBlock={{
+            titleHigh: "Founder & Full-Stack",
+            title: "Engineer",
+            location: "eFermier (Agricultural ERP SaaS Platform)",
+            date: "Jan 2025 ➔ Present"
+          }}
+
+          listBlock={{
+            intro1: "Solo-designed, built and launched a complete agricultural ERP SaaS platform from zero to production, addressing real gaps in the Romanian farming market.",
+            focus: "Key Engineering Contributions:",
+            items: [
+              {
+                text: "**AI Consultant**: Built a full RAG pipeline with Google Gemini trained on official APIA documents (PD, DR, ANT, ISA), giving farmers instant, cited answers about subsidies and eligibility.",
+              },
+              {
+                text: "**Subscription System**: Engineered Stripe integration with 30-day free trial, auto-renewal, role-based access control and suspended account handling.",
+              },
+              {
+                text: "**Multi-Domain Farm Management**: Architected a complete system in React, TypeScript and NestJS covering crops, livestock, orchards, vineyards, apiaries and more with season-based tracking and automatic cost-per-hectare calculation.",
+              },
+              {
+                text: "**Full Production Delivery**: Delivered monorepo architecture, automated CI/CD (Vercel + Railway), PostgreSQL (Supabase), Prisma ORM, JWT auth and a rich admin dashboard with reports, blog and farm visualization.",
+              },
+            ]
+          }}
+          skills={[
+            "REACT.JS",
+            "TYPESCRIPT",
+            "NESTJS",
+            "POSTGRESQL",
+            "PRISMA",
+            "STRIPE",
+            "GOOGLE GEMINI",
+            "RAG / AI",
+            "MONOREPO",
+            "VERCEL",
+            "RAILWAY",
+            "JWT AUTH",
+            "TAILWIND CSS",
+            "CLOUDINARY"
+          ]}
+          industry="AgriTech"
+        />
+
+        <TimelineItem
+          headBlock={{
             titleHigh: "Senior React Frontend",
             title: "Engineer",
             location: "Adfin (UK-based SaaS Platform)",
-            date: "Nov 2024 ➔ Present"
+            date: "Nov 2024 ➔ Dec 2024"
           }}
 
           listBlock={{

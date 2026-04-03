@@ -8,7 +8,8 @@ export default function ProjectCard({
   badges,
   textItem,
   websiteURL,
-  linkedinURL
+  linkedinURL,
+  Logo,                    // ← NOU: componenta de logo
 }: {
   companyName: string;
   subtitle: string;
@@ -16,6 +17,7 @@ export default function ProjectCard({
   textItem: { text: string };
   websiteURL: string;
   linkedinURL: string;
+  Logo?: React.ComponentType<{ size?: number; className?: string }>;
 }) {
   return (
     <div className="project-card relative el-highlight flex flex-col p-4 rounded-2xl justify-between">
@@ -35,6 +37,7 @@ export default function ProjectCard({
           }}
         />
       </div>
+
       <div className="links flex gap-2">
         <a href={websiteURL} aria-label={`Visit ${websiteURL} website`} title="Visit website" className="website p-1 badge-bg-highlight link rounded-full flex items-center justify-center">
           <Globe02 className="w-9 h-8" aria-hidden="true" />
@@ -44,8 +47,13 @@ export default function ProjectCard({
         </a>
       </div>
 
+      {/* LOGO NOU în colțul din dreapta sus */}
       <span className="absolute -top-3 -right-3 el-highlight p-1 rounded-full flex items-center justify-center">
-        <Globe02 className="w-14 h-13" />
+        {Logo ? (
+          <Logo size={56} className="drop-shadow-sm" />
+        ) : (
+          <Globe02 className="w-14 h-13" />
+        )}
       </span>
     </div>
   )

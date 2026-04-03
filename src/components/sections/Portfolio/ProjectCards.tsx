@@ -1,8 +1,20 @@
+import AdfinLogoIcon from "@/components/icons/AdfinLogoIcon";
+import eFermierLogoIcon from "@/components/icons/eFermierLogoIcon";
 import ProjectCard from "@/components/sections/Portfolio/ProjectCard";
 
 export default function ProjectCards() {
   return (
     <div className="projects-wrapper grid gap-x-8 gap-y-10 [grid-template-columns:repeat(auto-fit,_minmax(300px,_1fr))] sm:pb-0 pb-10">
+      <ProjectCard
+        companyName="eFermier"
+        subtitle="AgriTech • ERP SaaS Platform"
+        badges={["AgriTech", "TypeScript", "NestJS", "AI"]}
+        textItem={{
+          text: "Solo-built full-stack agricultural ERP SaaS from zero to production. Features AI consultant with Gemini + RAG (trained on official APIA docs), Stripe subscriptions, multi-domain farm management, reports, blog and complete admin dashboard.",
+        }}
+        websiteURL="https://efermier.ro"
+        linkedinURL="https://www.linkedin.com/company/efermier/"
+      />
       <ProjectCard
         companyName="Adfin"
         subtitle="FinTech • Web Platform"
