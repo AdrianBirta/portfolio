@@ -69,7 +69,7 @@ export default function Sidebar() {
             <Sun className="w-5 h-5" />
           ) : theme === "light" ? (
             // urmează efermier-light → arată logo-ul eFermier
-            <Icon name="efermierLogo" color="white" className="w-5 h-5" />
+                            <Icon name="efermierLogo" color="#00796B" className="w-5 h-5" />
           ) : (
             // urmează dark → arată luna
             <Moon01 className="w-5 h-5" />
