@@ -55,7 +55,7 @@ export default function TimelineList({ scroll }: { scroll: boolean }) {
             titleHigh: "Senior React Frontend",
             title: "Engineer",
             location: "Adfin (UK-based SaaS Platform)",
-            date: "Nov 2024 ➔ Dec 2024"
+            date: "Jan 2025 ➔ Present"
           }}
 
           listBlock={{
